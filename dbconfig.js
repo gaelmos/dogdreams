@@ -7,10 +7,10 @@
 
 
 export const config = {
-    host :process.env.POSTGRES_HOST,
-    database:"ort-prueba",
-    user:process.env.POSTGRES_USER,
-    password:process.env.POSTGRES_PASSWORD,
+    host :"ep-muddy-snowflake-a4oyv7a0.us-east-1.aws.neon.tech",
+    database:"perros",
+    user: "default",
+    password: "Bla6HiYkjq7G",
     port:5432,
     ssl: true
 }
