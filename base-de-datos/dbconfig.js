@@ -5,7 +5,6 @@
 // 
 
 
-
 export const config = {
     host :"ep-muddy-snowflake-a4oyv7a0.us-east-1.aws.neon.tech",
     database:"perros",
