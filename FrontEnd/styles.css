@@ -17,7 +17,7 @@ header {
     position: relative;
 }
 
-#filterBtn {
+#filterBtn, #publishBtn {
     background-color: #fff;
     color: #007BFF;
     border: 1px solid #007BFF;
@@ -26,6 +26,13 @@ header {
     border-radius: 5px;
     position: absolute;
     top: 20px;
+}
+
+#filterBtn {
+    right: 120px;
+}
+
+#publishBtn {
     right: 20px;
 }
 
@@ -67,7 +74,7 @@ header {
 
 main {
     display: grid;
-    grid-template-columns: repeat(3, 1fr); /* Cambiado a 3 columnas */
+    grid-template-columns: repeat(3, 1fr); /* 3 columnas para mostrar 3 perros por fila */
     gap: 20px;
     padding: 20px;
     max-width: 1200px;
@@ -125,6 +132,70 @@ main {
     font-size: 18px;
     color: #333;
     margin: 10px 0;
+}
+
+#adoptBtn {
+    background-color: #007BFF;
+    color: #fff;
+    border: none;
+    padding: 10px 20px;
+    cursor: pointer;
+    border-radius: 5px;
+    margin-top: 20px;
+}
+
+#contactInfo {
+    margin-top: 20px;
+    font-size: 18px;
+    color: #333;
+}
+
+.publish-container {
+    text-align: center;
+    padding: 20px;
+    background-color: #fff;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    margin: 20px;
+    max-width: 600px;
+    margin: auto;
+}
+
+.publish-container h2 {
+    margin-bottom: 20px;
+    font-size: 24px;
+    color: #333;
+}
+
+.input-group {
+    margin-bottom: 15px;
+    text-align: left;
+}
+
+.input-group label {
+    display: block;
+    margin-bottom: 5px;
+    font-size: 18px;
+    color: #333;
+}
+
+.input-group input {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    font-size: 16px;
+}
+
+button {
+    background-color: #007BFF;
+    color: #fff;
+    border: none;
+    padding: 10px 20px;
+    cursor: pointer;
+    border-radius: 5px;
+    font-size: 18px;
+    margin-top: 20px;
 }
 
 @media (max-width: 768px) {

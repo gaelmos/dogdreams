@@ -1,11 +1,17 @@
 document.addEventListener('DOMContentLoaded', function() {
     const marketplace = document.getElementById('marketplace');
     const filterBtn = document.getElementById('filterBtn');
+    const publishBtn = document.getElementById('publishBtn');
     const filterMenu = document.getElementById('filterMenu');
     const applyFiltersBtn = document.getElementById('applyFilters');
 
-    // Lista de perros con detalles
-    const dogs = [
+    // Redirigir a la página de publicación al hacer clic en "Publicar"
+    publishBtn.addEventListener('click', function() {
+        window.location.href = 'publicar.html';
+    });
+
+    // Lista de perros con detalles predefinidos
+    let dogs = [
         { 
             name: 'Max', 
             img: 'https://placedog.net/500/300?id=1', 
@@ -99,9 +105,14 @@ document.addEventListener('DOMContentLoaded', function() {
             img: 'https://placedog.net/500/300?id=12', 
             age: 3, 
             height: 49, 
-            personality: 'Activa'
+            personality: 'Activa', 
+            weight: 20 
         }
     ];
+
+    // Obtener perros guardados en localStorage y agregarlos a la lista
+    const storedDogs = JSON.parse(localStorage.getItem('dogs')) || [];
+    dogs = dogs.concat(storedDogs);
 
     // Función para mostrar el menú de filtros
     filterBtn.addEventListener('click', function() {

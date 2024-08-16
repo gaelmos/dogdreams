@@ -11,4 +11,12 @@ document.addEventListener('DOMContentLoaded', function() {
     } else {
         document.body.innerHTML = '<p>No se encontró la información del perro.</p>';
     }
+
+    // Manejar el clic en el botón de Adoptar
+    const adoptBtn = document.getElementById('adoptBtn');
+    const contactInfo = document.getElementById('contactInfo');
+
+    adoptBtn.addEventListener('click', function() {
+        contactInfo.style.display = 'block';
+    });
 });

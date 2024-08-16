@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Publicar Nuevo Perro</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="publish-container">
+        <h2>Publicar Nuevo Perro</h2>
+        <form id="publishForm">
+            <div class="input-group">
+                <label for="name">Nombre del Perro:</label>
+                <input type="text" id="name" required>
+            </div>
+            <div class="input-group">
+                <label for="age">Edad:</label>
+                <input type="number" id="age" min="0" required>
+            </div>
+            <div class="input-group">
+                <label for="height">Altura (cm):</label>
+                <input type="number" id="height" min="0" required>
+            </div>
+            <div class="input-group">
+                <label for="weight">Peso (kg):</label>
+                <input type="number" id="weight" min="0" required>
+            </div>
+            <div class="input-group">
+                <label for="personality">Personalidad:</label>
+                <input type="text" id="personality" required>
+            </div>
+            <div class="input-group">
+                <label for="image">Foto del Perro:</label>
+                <input type="file" id="image" accept="image/*" required>
+            </div>
+            <button type="submit">Publicar</button>
+        </form>
+    </div>
+    <script src="publicar.js"></script>
+</body>
+</html>
