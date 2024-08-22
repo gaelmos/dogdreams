@@ -9,7 +9,7 @@ app.listen(port, () => { console.log(' el servidor esta corriendo en port', {por
 
 app.post("/usuario",async (req, res) => {
     try{
-    const nuevousuario = await usuario.createusuario(req.body.nombre, req.body.mail, req.body.dni)
+    const nuevousuario = await usuario.createusuario(req.body.nombre, req.body.mail, req.body.dni, req.body.numero, req.body.direccion, req.body.contraseña, req.body.foto)
     res.json(nuevousuario);
      
 } catch (err) {
