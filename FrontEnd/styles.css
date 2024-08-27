@@ -8,81 +8,69 @@ body {
     align-items: center;
 }
 
-.publish-container, .dog-detail-container {
-    text-align: center;
+header {
+    background-color: #007BFF;
+    color: #fff;
     padding: 20px;
+    width: 100%;
+    text-align: center;
+    position: relative;
+}
+
+#filterBtn, #publishBtn {
     background-color: #fff;
+    color: #007BFF;
+    border: 1px solid #007BFF;
+    padding: 10px 20px;
+    cursor: pointer;
+    border-radius: 5px;
+    position: absolute;
+    top: 20px;
+}
+
+#filterBtn {
+    right: 120px;
+}
+
+#publishBtn {
+    right: 20px;
+}
+
+main {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr); /* 3 columnas para mostrar 3 perros por fila */
+    gap: 20px;
+    padding: 20px;
+    max-width: 1200px;
+}
+
+.dog-card {
+    background-color: #fff;
+    border: 1px solid #ccc;
     border-radius: 8px;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-    margin: 20px;
-    max-width: 600px;
-    margin: auto;
-}
-
-.publish-container h2, .dog-detail-container h2 {
-    margin-bottom: 20px;
-    font-size: 24px;
-    color: #333;
-}
-
-.input-group {
-    margin-bottom: 15px;
-    text-align: left;
-}
-
-.input-group label {
-    display: block;
-    margin-bottom: 5px;
-    font-size: 18px;
-    color: #333;
-}
-
-.input-group input,
-.input-group textarea {
-    width: 100%;
-    padding: 10px;
-    border: 1px solid #ccc;
-    border-radius: 4px;
-    font-size: 16px;
-}
-
-button {
-    background-color: #007BFF;
-    color: #fff;
-    border: none;
-    padding: 10px 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
     cursor: pointer;
-    border-radius: 5px;
-    font-size: 18px;
-    margin-top: 20px;
+    transition: transform 0.3s;
 }
 
-.dog-detail-container img {
+.dog-card:hover {
+    transform: scale(1.05);
+}
+
+.dog-card img {
+    border-top-left-radius: 8px;
+    border-top-right-radius: 8px;
     width: 100%;
-    height: auto;
-    max-width: 500px;
-    border-radius: 8px;
-    margin-bottom: 20px;
+    height: 200px;
+    object-fit: cover;
 }
 
-.dog-detail-container p {
-    font-size: 18px;
-    color: #333;
+.dog-card h2 {
     margin: 10px 0;
-}
-
-#adoptBtn {
-    background-color: #007BFF;
-    color: #fff;
-    border: none;
-    padding: 10px 20px;
-    cursor: pointer;
-    border-radius: 5px;
-    margin-top: 20px;
-}
-
-#contactInfo {
-    margin-top: 20px;
     font-size: 18px;
     color: #333;
+    text-align: center;
 }
