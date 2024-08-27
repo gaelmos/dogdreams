@@ -8,7 +8,7 @@ body {
     align-items: center;
 }
 
-.publish-container, .dog-detail-container {
+.register-container {
     text-align: center;
     padding: 20px;
     background-color: #fff;
@@ -19,7 +19,7 @@ body {
     margin: auto;
 }
 
-.publish-container h2, .dog-detail-container h2 {
+.register-container h2 {
     margin-bottom: 20px;
     font-size: 24px;
     color: #333;
@@ -37,8 +37,7 @@ body {
     color: #333;
 }
 
-.input-group input,
-.input-group textarea {
+.input-group input {
     width: 100%;
     padding: 10px;
     border: 1px solid #ccc;
@@ -55,34 +54,4 @@ button {
     border-radius: 5px;
     font-size: 18px;
     margin-top: 20px;
-}
-
-.dog-detail-container img {
-    width: 100%;
-    height: auto;
-    max-width: 500px;
-    border-radius: 8px;
-    margin-bottom: 20px;
-}
-
-.dog-detail-container p {
-    font-size: 18px;
-    color: #333;
-    margin: 10px 0;
-}
-
-#adoptBtn {
-    background-color: #007BFF;
-    color: #fff;
-    border: none;
-    padding: 10px 20px;
-    cursor: pointer;
-    border-radius: 5px;
-    margin-top: 20px;
-}
-
-#contactInfo {
-    margin-top: 20px;
-    font-size: 18px;
-    color: #333;
 }

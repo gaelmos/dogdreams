@@ -1,23 +1,35 @@
 document.getElementById('registerForm').addEventListener('submit', function(event) {
     event.preventDefault();
 
-    var email = document.getElementById('email').value;
-    var password = document.getElementById('password').value;
-    var dni = document.getElementById('dni').value;
-    var telefono = document.getElementById('telefono').value;
-    var barrio = document.getElementById('barrio').value;
-    var provincia = document.getElementById('provincia').value;
+    const dni = document.getElementById('dni').value;
+    const fullName = document.getElementById('fullName').value;
+    const email = document.getElementById('email').value;
+    const phone = document.getElementById('phone').value;
+    const address = document.getElementById('address').value;
+    const password = document.getElementById('password').value;
+    const photoFile = document.getElementById('photo').files[0];
 
-    // Validación básica de los campos
-    if (!email || !password || !dni || !telefono || !barrio || !provincia) {
-        document.getElementById('errorMsg').textContent = "Todos los campos son obligatorios.";
-        return;
+    const reader = new FileReader();
+
+    reader.onloadend = function() {
+        const user = {
+            dni: dni,
+            fullName: fullName,
+            email: email,
+            phone: phone,
+            address: address,
+            password: password,
+            photo: reader.result // Base64 string
+        };
+
+        // Guardar el usuario en localStorage
+        localStorage.setItem('user', JSON.stringify(user));
+
+        // Redirigir a la página principal o de bienvenida
+        window.location.href = 'pagina_principal.html';
+    };
+
+    if (photoFile) {
+        reader.readAsDataURL(photoFile);
     }
-
-    // Guardar los datos de registro en localStorage
-    localStorage.setItem('registeredEmail', email);
-    localStorage.setItem('registeredPassword', password);
-
-    // Redirigir a una página de éxito (simulada)
-    window.location.href = "registro_exitoso.html";  // Redirige a una página de registro exitoso
 });
