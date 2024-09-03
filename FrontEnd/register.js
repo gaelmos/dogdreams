@@ -1,4 +1,4 @@
-document.getElementById('registerForm').addEventListener('submit', function(event) {
+document.getElementById('registerForm').addEventListener('submit', async function(event) {
     event.preventDefault();
 
     const dni = document.getElementById('dni').value;
@@ -11,22 +11,37 @@ document.getElementById('registerForm').addEventListener('submit', function(even
 
     const reader = new FileReader();
 
-    reader.onloadend = function() {
+    reader.onloadend = async function() {
         const user = {
+            nombre: fullName,
+            mail: email,
             dni: dni,
-            fullName: fullName,
-            email: email,
-            phone: phone,
-            address: address,
-            password: password,
-            photo: reader.result // Base64 string
+            numero: phone,
+            direccion: address,
+            contraseña: password,
+            foto: reader.result // Base64 string
         };
 
-        // Guardar el usuario en localStorage
-        localStorage.setItem('user', JSON.stringify(user));
+        try {
+            const response = await fetch('http://localhost:3000/usuario', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json'
+                },
+                body: JSON.stringify(user)
+            });
 
-        // Redirigir a la página principal o de bienvenida
-        window.location.href = 'pagina_principal.html';
+            if (response.ok) {
+                alert('Usuario registrado con éxito');
+                window.location.href = 'pagina_principal.html';
+            } else {
+                const errorData = await response.json();
+                alert(`Error: ${errorData.error}`);
+            }
+        } catch (error) {
+            console.error('Error al enviar los datos:', error);
+            alert('Error al registrarse. Inténtelo de nuevo más tarde.');
+        }
     };
 
     if (photoFile) {

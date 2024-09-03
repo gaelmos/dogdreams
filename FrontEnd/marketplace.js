@@ -2,10 +2,17 @@ document.addEventListener('DOMContentLoaded', function() {
     const marketplace = document.getElementById('marketplace');
     const filterBtn = document.getElementById('filterBtn');
     const publishBtn = document.getElementById('publishBtn');
+    const applyFiltersBtn = document.getElementById('applyFilters');
 
     // Redirigir a la página de publicación al hacer clic en "Publicar"
     publishBtn.addEventListener('click', function() {
         window.location.href = 'publicar.html';
+    });
+
+    // Mostrar u ocultar el menú de filtros
+    filterBtn.addEventListener('click', function() {
+        const filterMenu = document.getElementById('filterMenu');
+        filterMenu.style.display = filterMenu.style.display === 'block' ? 'none' : 'block';
     });
 
     // Lista de perros con detalles, incluyendo los guardados en localStorage
@@ -76,4 +83,29 @@ document.addEventListener('DOMContentLoaded', function() {
 
     // Cargar todos los perros al inicio
     loadDogs(dogs);
+
+    // Función para aplicar filtros
+    applyFiltersBtn.addEventListener('click', function() {
+        const breedFilter = document.getElementById('breedFilter').value.toLowerCase();
+        const sizeFilter = document.getElementById('sizeFilter').value.toLowerCase();
+        const colorFilter = document.getElementById('colorFilter').value.toLowerCase();
+
+        let filteredDogs = dogs;
+
+        if (breedFilter) {
+            filteredDogs = filteredDogs.filter(dog => dog.breed.toLowerCase().includes(breedFilter));
+        }
+
+        if (sizeFilter) {
+            filteredDogs = filteredDogs.filter(dog => dog.size.toLowerCase().includes(sizeFilter));
+        }
+
+        if (colorFilter) {
+            filteredDogs = filteredDogs.filter(dog => dog.color.toLowerCase().includes(colorFilter));
+        }
+
+        loadDogs(filteredDogs);
+        const filterMenu = document.getElementById('filterMenu');
+        filterMenu.style.display = 'none'; // Cerrar el menú de filtros después de aplicar
+    });
 });
