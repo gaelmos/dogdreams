@@ -4,10 +4,12 @@ document.addEventListener('DOMContentLoaded', function() {
     if (dog) {
         document.getElementById('dogImage').src = dog.img;
         document.getElementById('dogName').textContent = dog.name;
-        document.getElementById('dogAge').textContent = dog.age;
-        document.getElementById('dogHeight').textContent = dog.height;
-        document.getElementById('dogPersonality').textContent = dog.personality;
-        document.getElementById('dogWeight').textContent = dog.weight;
+        document.getElementById('dogBreed').textContent = dog.breed;
+        document.getElementById('dogBirthdate').textContent = dog.birthdate;
+        document.getElementById('dogColor').textContent = dog.color;
+        document.getElementById('dogSize').textContent = dog.size;
+        document.getElementById('dogDifficulties').textContent = dog.difficulties || 'Ninguna';
+        document.getElementById('dogDescription').textContent = dog.description;
     } else {
         document.body.innerHTML = '<p>No se encontró la información del perro.</p>';
     }
