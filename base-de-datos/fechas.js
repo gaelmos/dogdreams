@@ -31,9 +31,9 @@ const createusuario = async (nombre, mail, dni, numero, direccion, contraseña, 
             throw err; 
         }
 };
-const crateperro = async (id, nombre, raza, descripcion, foto, color, nacimiento, tamaño, dificultades) => {
-    const query = 'INSERT INTO perro (id, nombre, raza, descripcion, foto, color, nacimiento, tamaño, dificultades) VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9) RETURNING *';
-    const values = [id, nombre, raza, descripcion, foto, color, nacimiento, tamaño, dificultades];
+const crateperro = async (nombre, raza, descripcion, foto, color, nacimiento, tamaño, dificultades) => {
+    const query = 'INSERT INTO perro (nombre, raza, descripcion, foto, color, nacimiento, tamaño, dificultades) VALUES ($1, $2, $3, $4, $5, $6, $7, $8) RETURNING *';
+    const values = [nombre, raza, descripcion, foto, color, nacimiento, tamaño, dificultades];
         try {
             const result = await client.query(query, values);
             return result.rows[0];
