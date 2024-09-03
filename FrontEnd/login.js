@@ -24,3 +24,11 @@ document.getElementById('loginForm').addEventListener('submit', async function(e
         alert('Error al iniciar sesión. Inténtelo de nuevo más tarde.');
     }
 });
+
+document.getElementById('registerBtn').addEventListener('click', function() {
+    window.location.href = 'pagina_registro.html'; // Redirige a la página de registro
+});
+
+document.getElementById('homeBtn').addEventListener('click', function() {
+    window.location.href = 'pagina_principal.html'; // Redirige a la página principal
+});
