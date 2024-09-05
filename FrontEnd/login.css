@@ -7,7 +7,7 @@ body {
     justify-content: center;
     align-items: center;
     height: 100vh;
-    position: relative;
+    flex-direction: column;
 }
 
 .login-container {
@@ -55,21 +55,23 @@ button {
     border-radius: 5px;
     font-size: 18px;
     margin-top: 20px;
+    width: 100%;
 }
 
 .nav-buttons {
-    position: absolute;
-    bottom: 20px;
-    width: 100%;
-    display: flex;
-    justify-content: space-between;
-    padding: 0 40px;
+    margin-top: 20px;
 }
 
 #registerBtn {
     background-color: #28a745; /* Verde para el botón de registro */
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    font-size: 16px;
+    cursor: pointer;
 }
 
-#homeBtn {
-    background-color: #007BFF; /* Azul para el botón de inicio de sesión */
+#registerBtn:hover {
+    opacity: 0.8;
 }
