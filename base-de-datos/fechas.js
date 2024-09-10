@@ -1,26 +1,27 @@
 import {client} from './dbconfig.js'
+
 const createusuario = async (nombre, mail, dni, numero, direccion, contraseña, foto) => {
-    const checkDNIQuery = 'SELECT * FROM usuario WHERE dni = $1';
-    const dniResult = await client.query(checkDNIQuery, [parseInt(dni)]);
+    const dnicheck = 'SELECT * FROM usuario WHERE dni = $1';
+    const dniResult = await client.query(dnicheck, [parseInt(dni)]);
     if (dniResult.rows.length > 0) {
         throw new Error('El DNI ya está en uso');
     }
-    const checkMailQuery = 'SELECT * FROM usuario WHERE mail = $1';
-    const mailResult = await client.query(checkMailQuery, [mail]);
+    const mailcheck = 'SELECT * FROM usuario WHERE mail = $1';
+    const mailResult = await client.query(mailcheck, [mail]);
     if (mailResult.rows.length > 0) {
         throw new Error('El correo electrónico ya está en uso');
     }
-    const checkNumeroQuery = 'SELECT * FROM usuario WHERE numero = $1';
-    const numeroResult = await client.query(checkNumeroQuery, [numero]);
+    const numerocheck = 'SELECT * FROM usuario WHERE numero = $1';
+    const numeroResult = await client.query(numerocheck, [numero]);
     if (numeroResult.rows.length > 0) {
         throw new Error('El número de teléfono ya está en uso');
     }
-    const checkContraseñaQuery = 'SELECT * FROM usuario WHERE contraseña = $1';
-    const contraseñaResult = await client.query(checkContraseñaQuery, [contraseña]);
+    const contraseñacheck = 'SELECT * FROM usuario WHERE contraseña = $1';
+    const contraseñaResult = await client.query(contraseñacheck, [contraseña]);
     if (contraseñaResult.rows.length > 0) {
         throw new Error('La contraseña ya está en uso');
     }
-
+   
     const query = 'INSERT INTO usuario (nombre, mail, dni, numero, direccion, contraseña, foto) VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING *';
     const values = [nombre, mail, parseInt(dni), numero, direccion, contraseña, foto];
         try {
