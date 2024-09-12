@@ -1,0 +1,83 @@
+body {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Estilos para Pantallas Grandes (Desktop y Laptop) */
+.Pantalla {
+    width: 95vw;
+    height: 100vh; /* Modificado: Se cambió '100h' a '100vh' para ajustar correctamente la altura. */
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between; /* Modificado: Se añadió justify-content para distribuir mejor los elementos. */
+    padding: 0 50px; /* Modificado: Se añadió padding para mejorar el espaciado horizontal. */
+}
+
+.Logo {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: #313130;
+    filter: blur(2px);
+    margin-bottom: 20px;
+    height: 150px;
+    width: 100%; /* Modificado: Se añadió un ancho del 100% para que el logo abarque toda la pantalla. */
+}
+
+.Logo p {
+    color: #fff;
+    font-family: Kenia;
+    font-size: 128px;
+    letter-spacing: 50.96px;
+    text-align: center; /* Modificado: Se centró el texto dentro del div del logo. */
+}
+
+.Columna1 {
+        flex-direction: column;
+        display: flex;
+        background: #FFF;
+        width: 20%; /* Modificado: Se redujo el ancho de las columnas para una mejor distribución en pantallas grandes. */
+        gap: 19px;
+        margin-left: -40px;
+}
+
+.Columna1 button{
+    color: #000;
+text-align: center;
+font-family: Kenia;
+font-size: 55px;
+font-style: normal;
+font-weight: 400;
+line-height: normal;
+letter-spacing: 4.4px;
+border-radius: 19px;
+background: #F3E353;
+}
+
+
+.Rectangulos2 div, .Rectangulos div {
+    width: 315px;
+height: 369px;
+flex-shrink: 0;
+    border: 1px solid #000;
+    margin-top: 30px;
+    box-sizing: border-box; 
+    display: flex;
+    flex-direction: row;
+}
+
+
+.Columna2 p{
+    color: #000;
+font-family: Kenia;
+font-size: 58px;
+font-style: normal;
+font-weight: 400;
+line-height: normal;
+letter-spacing: 4.4px;
+border-radius: 19px;
+margin-right: 100px;
+margin-bottom: -50px;
+}
