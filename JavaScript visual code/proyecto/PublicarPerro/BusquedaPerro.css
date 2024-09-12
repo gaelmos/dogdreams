@@ -1,18 +1,12 @@
-body {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-}
-
 /* Estilos para Pantallas Grandes (Desktop y Laptop) */
 .Pantalla {
     width: 90vw;
-    height: 100vh; /* Modificado: Se cambió '100h' a '100vh' para ajustar correctamente la altura. */
+    height: 100vh;
     display: flex;
     flex-direction: row;
     align-items: center;
-    justify-content: space-between; /* Modificado: Se añadió justify-content para distribuir mejor los elementos. */
-    padding: 0 50px; /* Modificado: Se añadió padding para mejorar el espaciado horizontal. */
+    justify-content: space-between;
+    padding: 0 50px;
 }
 
 .Logo {
@@ -20,10 +14,9 @@ body {
     align-items: center;
     justify-content: center;
     background: #313130;
-    filter: blur(2px);
     margin-bottom: 20px;
     height: 150px;
-    width: 100%; /* Modificado: Se añadió un ancho del 100% para que el logo abarque toda la pantalla. */
+    width: 100%;
 }
 
 .Logo p {
@@ -31,77 +24,58 @@ body {
     font-family: Kenia;
     font-size: 128px;
     letter-spacing: 50.96px;
-    text-align: center; /* Modificado: Se centró el texto dentro del div del logo. */
+    text-align: center;
 }
 
-.Columna1 {
-        flex-direction: column;
-        display: flex;
-        background: #FFF;
-        width: 20%; /* Modificado: Se redujo el ancho de las columnas para una mejor distribución en pantallas grandes. */
-        gap: 19px;
-        margin-left: -40px;
-        margin-bottom: 110px;
-}
-
-.Columna1 button{
-    color: #000;
-text-align: center;
-font-family: Kenia;
-font-size: 55px;
-font-style: normal;
-font-weight: 400;
-line-height: normal;
-letter-spacing: 4.4px;
-border-radius: 19px;
-background: #F3E353;
-}
-
-.Rectangulos div {
-    width: 315px;
-height: 369px;
-flex-shrink: 0;
-    border: 1px solid #000;
-    margin-bottom: 30px;
-    box-sizing: border-box; 
-    display: flex;
-    flex-direction: row;
-    margin-left: 30px;
-}
-
-.Columna2 {
+.Columna1, .Columna2, .Columna3 {
     flex-direction: column;
     display: flex;
     background: #FFF;
-    width: 20%; /* Modificado: Se redujo el ancho de las columnas para una mejor distribución en pantallas grandes. */
+    width: 20%;
     gap: 19px;
-    margin-left: -1000px;
-    margin-bottom: 110px;
+    margin-top: 180px;
 }
 
-.Rectangulos2 div {
-width: 315px;
-height: 369px;
-flex-shrink: 0;
-border: 1px solid #000;
-margin-bottom: 30px;
-box-sizing: border-box; 
-display: flex;
-flex-direction: row;
-margin-left: 30px;
+.Columna1 {
+    margin-left: -30px;
+    position: relative; /* Añadido para manejar mejor la relación con el botón */
 }
 
-.Rectangulo3{
-    margin-top: 90px;
-}
-
-.Columna2 p{
+.Columna1 button {
     color: #000;
-font-family: Kenia;
-font-size: 20px;
-font-style: normal;
-font-weight: 400;
-line-height: normal;
-letter-spacing: 4.64px;
-text-align: center;
+    text-align: center;
+    font-family: Archivo;
+    font-size: 55px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+    letter-spacing: 4.4px;
+    border-radius: 19px;
+    background: #F3E353;
+    border: none; /* Eliminado el borde */
+    padding: 10px 20px;
+    cursor: pointer;
+
+    /* Ajustar espaciado para que no se superponga a los rectángulos */
+    margin-top: -60px; /* Esto lo mantiene justo encima de los rectángulos sin superposición */
+    z-index: 2; /* Aseguramos que el botón esté visible sobre el logo */
+}
+
+.Columna2 {
+    margin-left: -100px;
+    margin-bottom: -30px;
+}
+
+.Rectangulos {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    margin-top: 0; /* Ajustar el margen superior para evitar que los rectángulos se acerquen al botón */
+}
+
+.Rectangulo {
+    width: 315px;
+    height: 369px;
+    border: 1px solid #000;
+    box-sizing: border-box;
 }
