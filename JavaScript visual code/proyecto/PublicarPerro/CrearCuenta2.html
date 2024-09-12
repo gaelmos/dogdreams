@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://fonts.googleapis.com/css2?family=Kenia&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="CrearCuenta2.css">
+    <link href="https://fonts.googleapis.com/css2?family=Archivo+Black&display=swap" rel="stylesheet">
+
+
+    <title>Crear Cuenta</title>
+</head>
+<body>
+
+    <!-- Hacer columnas mas largas de ancho y arreglar boton -->
+
+    <div class="Logo">
+        <p>DogDreams</p>
+    </div>
+
+   <div class="Pantalla">
+
+          <div class="Patas">
+            <img src="/proyecto/assets/patass.png" alt="patas.png">
+          </div>
+
+          <div class="Columnas">
+            <div class="NombreApellido">
+                    <input type="text" placeholder="Nombre y apellido">
+                </div>
+                <div class="columnaMail">
+                    <input type="text" placeholder="E-Mail">
+                </div>
+                
+                <div class="Contraseña">
+                    <input type="password" placeholder="Contraseña">
+                </div>
+                <div class="DNI">
+                    <input type="number" placeholder="DNI">
+                </div>
+                <div class="Telefono">
+                    <input type="number" placeholder="Teléfono">
+                </div>
+                <div class="Ubicacion">
+                    <input type="text" placeholder="Ubicación">
+                </div>
+                <div class="Crear">
+                  <button onclick="CrearCuenta()">Crear Cuenta</button>
+                </div>
+        </div>
+
+        <div class="FotoPerfil">
+            <div class="ImagenTextoArchivo">
+                <p>Insertar Foto</p>
+                <img src="/proyecto/Assets/cuadroperfil.png" alt="">
+                <input type="file">
+            </div>
+        </div>
+
+   </div>
+
+   <script>
+    function CrearCuenta(){
+        alert("Cuenta creada")
+        window.location.href="BusquedaPerro.html";
+    }
+</script>
+</body>
+</html>

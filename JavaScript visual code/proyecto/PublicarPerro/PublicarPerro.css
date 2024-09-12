@@ -1,0 +1,172 @@
+.NombrePerro input{
+    width: 413px;
+    height: 77px;
+    flex-shrink: 0;
+    border-radius: 23px;
+    border: 1px solid #000;
+    background: #FDC127;
+    color: #887A7A;
+    font-family: Kenia;
+    font-size: 48px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+    letter-spacing: 10.56px;
+    text-align: center;
+}
+
+.RazaPerro input{
+    text-align: center;
+    width: 421px;
+    height: 82px;
+    flex-shrink: 0;
+    color: #887A7A;
+    font-family: Kenia;
+    font-size: 48px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+    letter-spacing: 12.48px;
+    border-radius: 23px;
+    border: 1px solid #000;
+    background: #FDC127;
+    width: 413px;
+    height: 76px;
+    flex-shrink: 0;
+}
+
+.NacimientoPerro input{
+    width: 421px;
+    height: 82px;
+    flex-shrink: 0;
+    text-align: center;
+    color: #887A7A;
+    font-family: "Keania One";
+    font-size: 48px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+    letter-spacing: 3px;
+    width: 413px;
+    height: 76px;
+    flex-shrink: 0;
+    border-radius: 23px;
+    border: 1px solid #000;
+    background: #FDC127;
+}
+
+.ColorPerro input{
+    text-align: center;
+    width: 421px;
+height: 83px;
+flex-shrink: 0;
+color: #887A7A;
+font-family: Kenia;
+font-size: 48px;
+font-style: normal;
+font-weight: 400;
+line-height: normal;
+letter-spacing: 6.72px;
+width: 413px;
+height: 77px;
+flex-shrink: 0;
+border-radius: 23px;
+border: 1px solid #000;
+background: #FDC127;
+}
+
+.TamañoPerro input{
+    width: 421px;
+height: 82px;
+flex-shrink: 0;
+color: #887A7A;
+font-family: Kenia;
+font-size: 48px;
+font-style: normal;
+font-weight: 400;
+line-height: normal;
+letter-spacing: 6.72px;
+width: 413px;
+height: 76px;
+flex-shrink: 0;
+border-radius: 23px;
+border: 1px solid #000;
+background: #FDC127;
+text-align: center;
+}
+
+.DificultadesPerro input{
+    width: 421px;
+height: 82px;
+flex-shrink: 0;
+color: #887A7A;
+font-family: Kenia;
+font-size: 40px;
+font-style: normal;
+font-weight: 400;
+line-height: normal;
+letter-spacing: 5.6px;
+width: 413px;
+height: 76px;
+flex-shrink: 0;
+border-radius: 23px;
+border: 1px solid #000;
+background: #FDC127;
+text-align: center;
+}
+
+.publicar button{
+    width: 521px;
+height: 164px;
+flex-shrink: 0;
+color: #FFF;
+font-family: Kenia;
+font-size: 64px;
+font-style: normal;
+font-weight: 400;
+line-height: normal;
+letter-spacing: 17.28px;
+width: 511px;
+height: 152px;
+flex-shrink: 0;
+border-radius: 23px;
+border: 1px solid #FDC127;
+background: #000;
+text-align: center;
+}
+
+.publicar a{
+    text-decoration: none;
+    color: #fff;
+}
+
+.Descripcion input{
+    color: #000;
+    font-family: Kenia;
+    font-size: 40px;
+    font-style: normal;
+    font-weight: 200;
+    line-height: normal;
+    letter-spacing: 2.5px;
+
+}
+
+.Caracteristicas{
+    color: #DDDADA;
+font-family: Kenia;
+font-size: 110px;
+font-style: normal;
+font-weight: 400;
+line-height: normal;
+letter-spacing: 30.8px;
+
+}
+
+.barranegra{
+    width: 1440px;
+    height: 132px;
+    flex-shrink: 0;
+    border: 1px solid #FFF;
+background: #1F1F1E;
+filter: blur(2px); 
+}
