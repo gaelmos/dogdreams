@@ -6,7 +6,7 @@ body {
 
 /* Estilos para Pantallas Grandes (Desktop y Laptop) */
 .Pantalla {
-    width: 95vw;
+    width: 90vw;
     height: 100vh; /* Modificado: Se cambió '100h' a '100vh' para ajustar correctamente la altura. */
     display: flex;
     flex-direction: row;
@@ -41,6 +41,7 @@ body {
         width: 20%; /* Modificado: Se redujo el ancho de las columnas para una mejor distribución en pantallas grandes. */
         gap: 19px;
         margin-left: -40px;
+        margin-bottom: 110px;
 }
 
 .Columna1 button{
@@ -56,28 +57,51 @@ border-radius: 19px;
 background: #F3E353;
 }
 
-
-.Rectangulos2 div, .Rectangulos div {
+.Rectangulos div {
     width: 315px;
 height: 369px;
 flex-shrink: 0;
     border: 1px solid #000;
-    margin-top: 30px;
+    margin-bottom: 30px;
     box-sizing: border-box; 
     display: flex;
     flex-direction: row;
+    margin-left: 30px;
 }
 
+.Columna2 {
+    flex-direction: column;
+    display: flex;
+    background: #FFF;
+    width: 20%; /* Modificado: Se redujo el ancho de las columnas para una mejor distribución en pantallas grandes. */
+    gap: 19px;
+    margin-left: -1000px;
+    margin-bottom: 110px;
+}
+
+.Rectangulos2 div {
+width: 315px;
+height: 369px;
+flex-shrink: 0;
+border: 1px solid #000;
+margin-bottom: 30px;
+box-sizing: border-box; 
+display: flex;
+flex-direction: row;
+margin-left: 30px;
+}
+
+.Rectangulo3{
+    margin-top: 90px;
+}
 
 .Columna2 p{
     color: #000;
 font-family: Kenia;
-font-size: 58px;
+font-size: 20px;
 font-style: normal;
 font-weight: 400;
 line-height: normal;
-letter-spacing: 4.4px;
-border-radius: 19px;
-margin-right: 100px;
-margin-bottom: -50px;
+letter-spacing: 4.64px;
+text-align: center;
 }
