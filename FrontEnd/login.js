@@ -4,6 +4,11 @@ document.getElementById('loginForm').addEventListener('submit', async function(e
     const email = document.getElementById('email').value;
     const password = document.getElementById('password').value;
 
+    if (!email || !password) {
+        alert('Por favor, ingrese su correo electrónico y contraseña.');
+        return;
+    }
+
     try {
         const response = await fetch('http://localhost:3000/inicio', {
             method: 'POST',
@@ -17,10 +22,15 @@ document.getElementById('loginForm').addEventListener('submit', async function(e
             alert('Inicio de sesión exitoso');
             window.location.href = 'pagina_principal.html';
         } else {
-            alert('Error: No has podido iniciar sesión, intenta de nuevo.');
+            alert('Correo o contraseña incorrectos. Intente de nuevo.');
         }
     } catch (error) {
         console.error('Error al iniciar sesión:', error);
         alert('Error al iniciar sesión. Inténtelo de nuevo más tarde.');
     }
+});
+
+// Botón de registrarse redirige al formulario de registro
+document.getElementById('registerBtn').addEventListener('click', function() {
+    window.location.href = 'pagina_registro.html'; // Redirige a la página de registro
 });
