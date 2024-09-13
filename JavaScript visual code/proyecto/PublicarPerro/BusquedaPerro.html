@@ -7,7 +7,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link href="https://fonts.googleapis.com/css2?family=Archivo+Black&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="BusquedaPerro.css">
-    <title>Document</title>
+    <title>Busqueda de perro</title>
 </head>
 <body>
     <div class="Logo">
@@ -16,10 +16,10 @@
 
     <div class="Row">
         <div class="Responsable">
-            <button>Filtrar</button>
+            <button id="Filtrar">Filtrar</button>
             <p>Recuerde ser responsable !!</p>
+            <button id="Publicar" onclick="Publicar()">Publicar</button> <!-- Se añade el evento onclick -->
         </div>
-        
     </div>
 
     <div class="Pantalla">
@@ -51,5 +51,11 @@
             </div>
         </div>
     </div>
+
+    <script>
+        function Publicar(){
+            window.location.href = "PublicarPerro.html"; // Redirige a la página PublicarPerro.html
+        }
+    </script>
 </body>
 </html>
