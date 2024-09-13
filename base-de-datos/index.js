@@ -12,7 +12,6 @@ const claveSecreta = crypto.randomBytes(64).toString('hex');
 app.use(cors({ origin: '*', credentials: true }));
 app.use(express.json());
 
-// Función para crear usuario
 const createusuario = async (nombre, mail, dni, numero, direccion, contraseña, foto) => {
     const dnicheck = 'SELECT * FROM usuario WHERE dni = $1';
     const dniResult = await client.query(dnicheck, [parseInt(dni)]);
@@ -46,7 +45,6 @@ const createusuario = async (nombre, mail, dni, numero, direccion, contraseña, 
     }
 };
 
-// Función para crear perro
 const crateperro = async (nombre, raza, descripcion, foto, color, nacimiento, tamaño, dificultades) => {
     const query = 'INSERT INTO perro (nombre, raza, descripcion, foto, color, nacimiento, tamaño, dificultades) VALUES ($1, $2, $3, $4, $5, $6, $7, $8) RETURNING *';
     const values = [nombre, raza, descripcion, foto, color, nacimiento, tamaño, dificultades];
@@ -59,7 +57,7 @@ const crateperro = async (nombre, raza, descripcion, foto, color, nacimiento, ta
     }
 };
 
-// Ruta para crear usuario
+
 app.post("/usuario", async (req, res) => {
     try {
         const hashed = await bcryptjs.hash(req.body.contraseña, 10);
@@ -81,7 +79,7 @@ app.post("/usuario", async (req, res) => {
     }
 });
 
-// Ruta para iniciar sesión
+
 app.post("/inicio", async (req, res) => {
     const { mail, contraseña } = req.body;
     try {

@@ -23,7 +23,7 @@ document.getElementById('registerForm').addEventListener('submit', async functio
         };
 
         try {
-            const response = await fetch('http://localhost:3000/usuario', {
+            const response = await fetch('postgres://default:Bla6HiYkjq7G@ep-muddy-snowflake-a4oyv7a0-pooler.us-east-1.aws.neon.tech:5432/verceldb?sslmode=require', {
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/json'
