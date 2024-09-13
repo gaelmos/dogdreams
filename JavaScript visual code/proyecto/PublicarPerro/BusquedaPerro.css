@@ -17,6 +17,7 @@
     margin-bottom: 20px;
     height: 150px;
     width: 100%;
+    flex-direction: column;
 }
 
 .Logo p {
@@ -27,7 +28,7 @@
     text-align: center;
 }
 
-.Columna1, .Columna2, .Columna3 {
+.Columna1, .Columna2, .Columna3, .Columna4 {
     flex-direction: column;
     display: flex;
     background: #FFF;
@@ -41,7 +42,13 @@
     position: relative; /* Añadido para manejar mejor la relación con el botón */
 }
 
-.Columna1 button {
+.Row{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+
+.Row button {
     color: #000;
     text-align: center;
     font-family: Archivo;
@@ -53,13 +60,28 @@
     border-radius: 19px;
     background: #F3E353;
     border: none; /* Eliminado el borde */
-    padding: 10px 20px;
+    width: 366px;
+    height: 82px;
+    flex-shrink: 0;    
     cursor: pointer;
+    margin-right: 1500px;
+    margin-top: -20px;
 
     /* Ajustar espaciado para que no se superponga a los rectángulos */
-    margin-top: -60px; /* Esto lo mantiene justo encima de los rectángulos sin superposición */
     z-index: 2; /* Aseguramos que el botón esté visible sobre el logo */
 }
+
+.Row p{
+    color: #000;
+font-family: Kenia;
+font-size: 58px;
+font-style: normal;
+font-weight: 400;
+line-height: normal;
+letter-spacing: 4.64px;
+text-align: center;
+}
+
 
 .Columna2 {
     margin-left: -100px;
@@ -79,3 +101,4 @@
     border: 1px solid #000;
     box-sizing: border-box;
 }
+
