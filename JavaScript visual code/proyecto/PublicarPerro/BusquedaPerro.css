@@ -38,7 +38,7 @@
     gap: 19px;
     align-items: center;
     justify-self: center; /* Asegura que cada columna se centre en su celda de grid */
-    margin-top: -150px;
+    margin-top: -50px;
 }
 
 .Columna1 {
@@ -81,10 +81,16 @@
 }
 
 .Row {
+    margin-left: 30px;
     display: flex;
     align-items: center;
     justify-content: center;
     flex-direction: row;
+    margin-top: -58px;
+}
+
+.Row p{
+    margin-top: 100px;
 }
 
 #Filtrar {
