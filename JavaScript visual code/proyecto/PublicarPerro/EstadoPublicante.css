@@ -1,11 +1,14 @@
-.Pantalla{
+.Pantalla {
     width: 95vw;
-    height: 100h;
+    height: 100vh; /* Corrección de la unidad de altura */
     display: flex;
     flex-direction: row;
-    align-items: center;
-    margin-right: 200px;
-
+    align-items: flex-end; /* Alinea el contenido a la parte inferior */
+    justify-content: space-between; /* Mantener espacio entre las columnas */
+    margin-right: 0; /* Ajustar márgenes */
+    padding: 0 2vw; /* Añadir un pequeño padding para margen en pantallas grandes */
+    box-sizing: border-box; /* Asegura que el padding no rompa el diseño */
+    margin-top: -170px;
 }
 
 .Logo {
@@ -22,34 +25,65 @@
 .Logo p {
     color: #fff;
     font-family: Kenia;
-    font-size: 128px;
-    letter-spacing: 60.96px;
+    font-size: 128px; /* Mantiene el tamaño original */
+    letter-spacing: 80.96px;
     text-align: center;
 }
 
-.Columna2{
-    display: flex;
+.Columna2 {
+    display: flex;   
     flex-direction: column;
-    width: 33%;
+    align-items: center;
+    background: #FFF;
+    width: 100%; /* Mantiene el tamaño de ancho original */
 }
 
-.Datos > div{
+.Columna2 p {
+    color: #887A7A;
+    font-family: Archivo;
+    font-size: 48px; /* Mantiene el tamaño original */
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;    
+    letter-spacing: 3.84px;
+    display: flex;
+    border: 1px solid #000;
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+    outline: none;
+    padding: 10px 20px;
+    margin-bottom: 15px;
     border-radius: 20px;
-border: 1px solid #000;
-background: #FFF;
-box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
-width: 704px;
-height: 60px;
-
-color: #887A7A;
-font-family: Archivo;
-font-size: 40px;
-font-style: normal;
-font-weight: 400;
-line-height: normal;
-letter-spacing: 4.16px;
-margin-bottom: 30px;
+    box-sizing: border-box; /* Asegura que el padding no afecte el tamaño total */
+    text-align: left;
+    width: 800px; /* Mantiene el tamaño original */
 }
 
+.Columna1 {
+    display: flex;
+    align-items: flex-end;
+    width: 33%; /* Mantiene el ancho original */
+    margin-bottom: 0; /* Eliminar margen negativo */
+}
 
+.Columna3 {
+    display: flex;
+    align-items: flex-end;
+    width: 33%; /* Mantiene el ancho original */
+    justify-content: flex-end;
+    margin-right: 0; /* Eliminar margen negativo */
+    margin-bottom: 0; /* Eliminar margen negativo */
+}
+
+/* Media Queries específicas para pantallas mayores */
+@media (min-width: 1024px) and (max-width: 1440px) {
+    .Pantalla {
+        padding: 0 3vw; /* Solo ajusta el espacio del contenedor sin mover los elementos */
+    }
+}
+
+@media (min-width: 1441px) {
+    .Pantalla {
+        padding: 0 5vw; /* Aumenta un poco el padding en pantallas grandes */
+    }
+}
 
