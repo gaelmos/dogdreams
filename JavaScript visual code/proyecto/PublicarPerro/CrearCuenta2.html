@@ -6,64 +6,56 @@
     <link href="https://fonts.googleapis.com/css2?family=Kenia&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="CrearCuenta2.css">
     <link href="https://fonts.googleapis.com/css2?family=Archivo+Black&display=swap" rel="stylesheet">
-
-
     <title>Crear Cuenta</title>
 </head>
 <body>
-
-    <!-- Hacer columnas mas largas de ancho y arreglar boton -->
 
     <div class="Logo">
         <p>DogDreams</p>
     </div>
 
-   <div class="Pantalla">
+    <div class="Pantalla">
 
-          <div class="Patas">
-            <img src="../Assets/patass.png" alt="patas.png">
-          </div>
+        <form id="registerForm" class="Formulario">
+            <div class="Patas">
+                <img src="../Assets/patass.png" alt="patas.png">
+            </div>
 
-          <div class="Columnas">
-            <div class="NombreApellido">
-                    <input type="text" placeholder="Nombre y apellido">
-                </div>
+            <div class="Columnas">
                 <div class="columnaMail">
-                    <input type="text" placeholder="E-Mail">
+                    <input id="email" type="email" placeholder="E-MAIL" required>
                 </div>
-                
                 <div class="Contraseña">
-                    <input type="password" placeholder="Contraseña">
+                    <input id="password" type="password" placeholder="Contraseña" required>
                 </div>
                 <div class="DNI">
-                    <input type="number" placeholder="DNI">
+                    <input id="dni" type="number" placeholder="DNI" required>
                 </div>
                 <div class="Telefono">
-                    <input type="number" placeholder="Teléfono">
+                    <input id="phone" type="tel" placeholder="Teléfono" required>
+                </div>
+                <div class="NombreApellido">
+                    <input id="fullName" type="text" placeholder="Nombre y apellido" required>
                 </div>
                 <div class="Ubicacion">
-                    <input type="text" placeholder="Ubicación">
+                    <input id="address" type="text" placeholder="Ubicación (barrio, provincia)" required>
                 </div>
                 <div class="Crear">
-                  <button onclick="CrearCuenta()">Crear Cuenta</button>
+                    <button type="submit">Crear cuenta</button>
                 </div>
-        </div>
-
-        <div class="FotoPerfil">
-            <div class="ImagenTextoArchivo">
-                <p>Insertar Foto</p>
-                <img src="../Assets/cuadroperfil.png" alt="">
-                <input type="file">
             </div>
-        </div>
 
-   </div>
+            <div class="FotoPerfil">
+                <div class="CuadroBlanco"></div> <!-- Cuadro blanco para la foto -->
+                <div class="ImagenTextoArchivo">
+                    <p>Insertar foto de perfil</p>
+                    <input id="photo" type="file" accept="image/*" required>
+                </div>
+            </div>
+        </form>
 
-   <script>
-    function CrearCuenta(){
-        alert("Cuenta creada")
-        window.location.href="BusquedaPerro.html";
-    }
-</script>
+    </div>
+
+    <script src="crearCuenta.js"></script>
 </body>
 </html>

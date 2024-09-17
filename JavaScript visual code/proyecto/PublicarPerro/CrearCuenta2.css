@@ -1,115 +1,125 @@
-.Pantalla{
-    width: 95vw;
-    height: 100h;
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-    margin-right: 200px;
-
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
 }
 
-.Columnas{
+body {
+    font-family: 'Archivo', sans-serif;
+    background-color: #f5f5f5;
+}
+
+.Logo {
+    display: flex;
     align-items: center;
-    flex-direction: column;
     justify-content: center;
-    display: flex;   
-    background: #FFF;
-    width: 100%;
+    background-color: #313130;
+    padding: 20px 0;
+    margin-bottom: 20px;
 }
 
-
-.Columnas input {
-    color: #887A7A;
-    font-family: Archivo;
-    font-size: 48px;
-    font-style: normal;
-    font-weight: 400;
-    line-height: normal;    
-    letter-spacing: 3.84px;
-    display: flex;
-    border: 1px solid #000;
-    box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
-    outline: none;
-    padding: 10px 20px;
-    margin-bottom: 15px;
-    border-radius: 20px;
-    box-sizing: content-box;
-    text-align: left;
-    
-}
-
-.Logo p{
-    display: flex;
-    align-items: center;
+.Logo p {
     color: #E7B639;
-    font-family: Archivo;
+    font-family: 'Archivo Black', sans-serif;
     font-size: 128px;
-    font-style: normal;
-    font-weight: 400;
-    line-height: normal;
     letter-spacing: 40.96px;
 }
 
-.Logo{
-    align-items: center;
+.Pantalla {
     display: flex;
-    padding: 7px 269px;
+    justify-content: center;
+    align-items: center;
+    padding: 40px;
+    height: 100vh;
+}
+
+.Formulario {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 50px;
+    background-color: #fff;
+    padding: 30px;
+    border-radius: 10px;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+    width: 80%;
+    max-width: 1200px;
+}
+
+.Patas {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 200px;
+    height: auto;
+}
+
+.Columnas {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 15px;
+    width: 100%;
+    max-width: 400px;
+}
+
+.Columnas input {
+    color: #887A7A;
+    font-size: 24px;
+    padding: 15px;
+    border: 1px solid #000;
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+    outline: none;
+    border-radius: 10px;
+    width: 100%;
+    text-align: left;
+}
+
+.Crear {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+    background-color: #F1C144;
+    border-radius: 10px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.Crear button {
+    background-color: transparent;
+    border: none;
+    font-size: 24px;
+    font-family: Archivo, sans-serif;
+    cursor: pointer;
+}
+
+.Crear button:hover {
+    background-color: #e1a538;
+}
+
+.FotoPerfil {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
     justify-content: center;
     gap: 10px;
-    flex-shrink: 0;
-    background: #313130;
-    margin-bottom: 20px;
-    height: 150px;
-    
 }
 
-.Patas{
-    display: flex;
-    justify-content: flex-start;
-    margin-left: 250px;
-    width: 275px;
-height: 252px;
-flex-shrink: 0;
+.CuadroBlanco {
+    width: 200px;
+    height: 200px;
+    background-color: #fff;
+    border: 2px solid #000;
+    border-radius: 10px;
+    margin-bottom: 10px;
 }
 
-.FotoPerfil{
-    align-items: center;
-    display: flex;
-    font-family: Archivo;
-    text-align: center;
-    margin-right: 150px;
+.FotoPerfil input {
+    margin-top: 10px;
 }
 
-.FotoPerfil img, input{
-    margin-bottom: 30px;
-}
-
-.FotoPerfil p{
-    font-size: 30px;
+.ImagenTextoArchivo p {
+    font-size: 18px;
     color: #000;
-
-}
-
-.Crear{
-    display: flex;
-width: 388px;
-padding: 22px 34px;
-justify-content: center;
-align-items: center;
-gap: 10px;
-border-radius: 19px;
-background: #F1C144;
-margin-top: 30px;
-}
-
-.Crear button{
-    color: #000;
-font-family: Archivo;
-font-size: 55px;
-font-style: normal;
-font-weight: 400;
-line-height: normal;
-letter-spacing: 4.4px;
-background-color: transparent;
-border: none;
 }
