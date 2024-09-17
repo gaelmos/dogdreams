@@ -1,0 +1,55 @@
+.Pantalla{
+    width: 95vw;
+    height: 100h;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    margin-right: 200px;
+
+}
+
+.Logo {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: #313130;
+    margin-bottom: 20px;
+    height: 150px;
+    width: 100%;
+    flex-direction: column;
+}
+
+.Logo p {
+    color: #fff;
+    font-family: Kenia;
+    font-size: 128px;
+    letter-spacing: 60.96px;
+    text-align: center;
+}
+
+.Columna2{
+    display: flex;
+    flex-direction: column;
+    width: 33%;
+}
+
+.Datos > div{
+    border-radius: 20px;
+border: 1px solid #000;
+background: #FFF;
+box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
+width: 704px;
+height: 60px;
+
+color: #887A7A;
+font-family: Archivo;
+font-size: 40px;
+font-style: normal;
+font-weight: 400;
+line-height: normal;
+letter-spacing: 4.16px;
+margin-bottom: 30px;
+}
+
+
+
