@@ -9,7 +9,7 @@
     ],
     "routes": [
      {
-      "src": "/(.*)",
+      "src": "base-de-datos/(.*)",
       "dest": "index.js"
      }
     ]
