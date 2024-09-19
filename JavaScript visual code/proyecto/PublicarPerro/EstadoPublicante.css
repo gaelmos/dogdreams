@@ -8,7 +8,9 @@
     margin-right: 0; /* Ajustar márgenes */
     padding: 0 2vw; /* Añadir un pequeño padding para margen en pantallas grandes */
     box-sizing: border-box; /* Asegura que el padding no rompa el diseño */
-    margin-top: -170px;
+    justify-content: center;
+    margin-left: 60px;
+    margin-top: -50px;
 }
 
 .Logo {
@@ -30,7 +32,7 @@
     text-align: center;
 }
 
-.Columna2 {
+.Datos {
     display: flex;   
     flex-direction: column;
     align-items: center;
@@ -38,7 +40,7 @@
     width: 100%; /* Mantiene el tamaño de ancho original */
 }
 
-.Columna2 p {
+.Datos p {
     color: #887A7A;
     font-family: Archivo;
     font-size: 48px; /* Mantiene el tamaño original */
@@ -58,19 +60,15 @@
     width: 800px; /* Mantiene el tamaño original */
 }
 
+.Columna2 img{
+    padding: 7px 7px;
+    margin-left: 200px;
+}
+
 .Columna1 {
     display: flex;
     align-items: flex-end;
     width: 33%; /* Mantiene el ancho original */
-    margin-bottom: 0; /* Eliminar margen negativo */
-}
-
-.Columna3 {
-    display: flex;
-    align-items: flex-end;
-    width: 33%; /* Mantiene el ancho original */
-    justify-content: flex-end;
-    margin-right: 0; /* Eliminar margen negativo */
     margin-bottom: 0; /* Eliminar margen negativo */
 }
 
@@ -86,4 +84,44 @@
         padding: 0 5vw; /* Aumenta un poco el padding en pantallas grandes */
     }
 }
+
+.Boton{
+    border-radius: 23px;
+border: 1px solid #FCFCFC;
+background: #000;
+}
+
+.Boton p{
+    color: #FFF;
+font-family: Kenia;
+font-size: 40px;
+font-style: normal;
+font-weight: 400;
+line-height: normal;
+letter-spacing: 17.28px;
+text-align: center;
+}
+
+.Boton {
+    background-color: #000; /* Fondo negro */
+    color: #FFF; /* Letras blancas */
+    border: none; /* Elimina el borde */
+    border-radius: 23px;
+    padding: 15px 30px; /* Ajusta el tamaño del botón */
+    font-family: Archivo;
+    font-size: 40px;
+    letter-spacing: 17.28px;
+    text-align: center;
+    cursor: pointer; /* Muestra una mano al pasar sobre el botón */
+    display: block; /* Asegura que esté en su propia línea */
+    margin: 20px auto 0; /* Centra el botón horizontalmente y deja un margen superior */
+    transition: background-color 0.3s ease; /* Transición suave al cambiar el color */
+}
+
+.Boton:hover {
+    background-color: #333; /* Cambia el fondo al pasar el mouse */
+}
+
+
+
 
