@@ -41,10 +41,16 @@
                 </div>
             </div>
             
-            <button class="Boton">Aceptar</button>
+            <button onclick="redirigir()" class="Boton">Aceptar</button>
     </div>
     
     <!--Hacer que el boton tire un alert que diga perroa doptado y rediriga a busquedaperro-->
+    <script>
+        function redirigir() {
+            alert("Perro Adoptado")
+            window.location.href = "BusquedaPerro.html"; // Cambia la URL aquí
+        }
+    </script>
 
 </body>
 </html>
