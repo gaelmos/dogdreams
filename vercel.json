@@ -2,7 +2,7 @@
     "version": 2,
     "builds": [
      {
-      "src": "index.js",
+      "src": "base-de-datos/index.js",
       "use": "@vercel/node",
       "config": { "includeFiles": ["dist/**"] }
      }
@@ -10,7 +10,7 @@
     "routes": [
      {
       "src": "base-de-datos/(.*)",
-      "dest": "index.js"
+      "dest": "base-de-datos/index.js"
      }
     ]
    }
