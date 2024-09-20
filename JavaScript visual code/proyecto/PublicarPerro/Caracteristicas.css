@@ -24,7 +24,6 @@ body {
     background: #FFF;
     width: 60%; /* Modificado: Se redujo el ancho de las columnas para una mejor distribución en pantallas grandes. */
     gap: 19px;
-    margin-bottom: 200px;
 }
 
 .Logo {
@@ -50,15 +49,13 @@ body {
     justify-content: flex-start;
     display: flex;
     margin-left: 30px; /* Modificado: Se redujo el margen izquierdo para ajustarlo mejor en pantallas grandes. */
-    margin-bottom: 200px;
 }
 
 .Foto {
     display: flex;
     flex-direction: column; /* Modificado: Se estableció flex-direction en columna para alinear los elementos correctamente. */
     align-items: center; /* Modificado: Alineación centrada para las fotos y textos dentro del contenedor. */
-    margin-right: 15px; /* Modificado: Se redujo el margen derecho para ajustarlo mejor en pantallas grandes. */
-    margin-bottom: 200px;
+    margin-right: 30px; /* Modificado: Se redujo el margen derecho para ajustarlo mejor en pantallas grandes. */
 }
 
 .Foto p {

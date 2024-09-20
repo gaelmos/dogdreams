@@ -7,72 +7,100 @@
     <link rel="stylesheet" href="Caracteristicas.css">
     <link href="https://fonts.googleapis.com/css2?family=Archivo+Black&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Kenia&display=swap" rel="stylesheet">
-
 </head>
 <body>
     <div class="Logo">
         <p>Características</p>
-
     </div>
 
- <div class="Pantalla">
+    <div class="Pantalla">
+        <div class="Patitas">
+            <img src="../Assets/patitas.png" alt="">
+        </div>
 
-    <div class="Patitas">
-        <img src="../Assets/patitas.png" alt="">
+        <div class="Columnas">
+            <form id="publishForm">
+                <div class="Nombre">
+                    <label for="name">Nombre:</label>
+                    <input type="text" id="name" name="name" placeholder="Nombre" required>
+                </div>
+                
+                <div class="Raza">
+                    <label for="breed">Raza:</label>
+                    <input type="text" id="breed" name="breed" placeholder="Raza" required>
+                </div>
+                
+                <div class="Nacimiento">
+                    <label for="birthdate">Nacimiento:</label>
+                    <input type="text" id="birthdate" name="birthdate" placeholder="Nacimiento" required>
+                </div>
 
+                <div class="Color">
+                    <label for="color">Color:</label>
+                    <input type="text" id="color" name="color" placeholder="Color" required>
+                </div>
+
+                <div class="Tamano">
+                    <label for="size">Tamaño:</label>
+                    <input type="text" id="size" name="size" placeholder="Tamaño" required>
+                </div>
+
+                <div class="Dificultades">
+                    <label for="difficulties">Dificultades:</label>
+                    <input type="text" id="difficulties" name="difficulties" placeholder="Dificultades si/no" required>
+                </div>
+
+                <div class="Publicar">
+                    <button type="submit">Publicar</button>
+                </div>
+            </form>
+        </div>
+
+        <div class="Foto">
+            <p>Insertar Foto</p>
+            <img src="../Assets/cuadroperfil.png" alt="">
+            <input type="file" id="photo" name="photo" required>
+        </div>
     </div>
-    <div class="Columnas">
-        
 
+    <script>
+        document.getElementById('publishForm').addEventListener('submit', function(event) {
+            event.preventDefault();
 
+            const name = document.getElementById('name').value;
+            const breed = document.getElementById('breed').value;
+            const birthdate = document.getElementById('birthdate').value;
+            const color = document.getElementById('color').value;
+            const size = document.getElementById('size').value;
+            const difficulties = document.getElementById('difficulties').value;
+            const photoFile = document.getElementById('photo').files[0];
 
-        <div class="Nombre">
-            <input type="text" placeholder="Nombre">
+            const reader = new FileReader();
 
-        </div>
-        <div class="Raza">
-            <input type="text" placeholder="Raza">
+            reader.onloadend = function() {
+                const newDog = {
+                    name: name,
+                    breed: breed,
+                    birthdate: birthdate,
+                    color: color,
+                    size: size,
+                    difficulties: difficulties,
+                    img: reader.result  // Base64 string
+                };
 
-        </div>
-        <div class="Nacimiento">
-            <input type="text" placeholder="Nacimiento">
+                // Guardar el nuevo perro en localStorage
+                let dogs = JSON.parse(localStorage.getItem('dogs')) || [];
+                dogs.push(newDog);
+                localStorage.setItem('dogs', JSON.stringify(dogs));
 
-        </div>
-        <div class="Color">
-            <input type="Text" placeholder="Color">
-            
-        </div>
-        <div class="Tamano">
-            <input type="text" placeholder="Tamaño">
+                // Redirigir a la página principal
+                window.location.href = 'pagina_principal.html';
+            };
 
-        </div>
-        <div class="Dificultades">
-            <input type="text" placeholder="Dificultades si/no">
-
-        </div>
-        <div class="Publicar">
-            <button onclick="Publicar()">Publicar</button>
-        </div>
-        
-    </div>
-
-    <div class="Foto">
-        
-        <p>Insertar Foto</p>
-        <img src="../Assets/cuadroperfil.png" alt="">
-        <input type="file">
-        
-    </div>
-
- </div>
-
- <script>
-    function Publicar(){
-        alert("Perro Publicado")
-        window.location.href="BusquedaPerro.html";
-    }
-</script>
-    
-
+            if (photoFile) {
+                reader.readAsDataURL(photoFile);
+            }
+        });
+    </script>
 </body>
 </html>
