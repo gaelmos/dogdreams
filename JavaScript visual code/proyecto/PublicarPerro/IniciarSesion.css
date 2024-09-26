@@ -58,7 +58,7 @@ body {
     display: flex;
     flex-direction: column;
     justify-content: center;
-    gap: 40px;
+    gap: 80px;
     width: 100%;
     max-width: 400px;
     align-items: center;
@@ -74,6 +74,7 @@ font-weight: 400;
 line-height: normal;
 letter-spacing: 8.96px;
 }
+
 
 .Columnas input {
     color: #887A7A;
@@ -149,10 +150,10 @@ letter-spacing: 8.96px;
 .Row2{
     display: flex;
     flex-direction: row;
-    gap: 50px;
+    gap: 60px;
     align-items: center;
     justify-content: center;
-    
+    margin-left: 50px;
 }
 
 .Row2 button {
@@ -162,12 +163,17 @@ letter-spacing: 8.96px;
     font-family: Archivo, sans-serif;
     cursor: pointer;
     border-radius: 15px;
-    width: 300px;
-    height: 150px;
+    width: 470px;
+    height: 100px;
 }
+
 
 .Row2 button:hover {
     background-color: #e1a538;
+}
+
+.Row2 p{
+    white-space: nowrap;
 }
 
 .Row2 button p{
