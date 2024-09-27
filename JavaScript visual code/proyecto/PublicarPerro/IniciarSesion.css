@@ -181,3 +181,21 @@ letter-spacing: 8.96px;
     border: none;
     box-shadow: none;
 }
+
+#contraseña{
+    white-space: nowrap;
+    width: 653px;
+height: 44px;
+flex-shrink: 0;
+color: #000;
+font-family: Kenia;
+font-size: 40px;
+font-style: normal;
+font-weight: 400;
+line-height: normal;
+letter-spacing: 3.84px;
+margin-left: 150px;
+margin-top: -40px;
+cursor: pointer;
+text-decoration: none;
+}
