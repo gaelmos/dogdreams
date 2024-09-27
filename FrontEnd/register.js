@@ -32,15 +32,18 @@ document.getElementById('registerForm').addEventListener('submit', async functio
             });
 
             if (response.ok) {
+                console.log(user);
                 alert('Usuario registrado con éxito');
-                window.location.href = 'pagina_principal.html';
+                return window.location.href = 'pagina_principal.html';
             } else {
                 const errorData = await response.json();
                 alert(`Error: ${errorData.error}`);
+                console.log(error);
             }
         } catch (error) {
             console.error('Error al enviar los datos:', error);
             alert('Error al registrarse. Inténtelo de nuevo más tarde.');
+            return;
         }
     };
 
