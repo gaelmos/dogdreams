@@ -1,16 +1,15 @@
+* {
+    box-sizing: border-box; /* Asegura que el padding no afecte el tamaño total */
+}
+
 .Pantalla {
     width: 95vw;
-    height: 100vh; /* Corrección de la unidad de altura */
+    height: 100vh;
     display: flex;
-    flex-direction: row;
-    align-items: flex-end; /* Alinea el contenido a la parte inferior */
-    justify-content: space-between; /* Mantener espacio entre las columnas */
-    margin-right: 0; /* Ajustar márgenes */
-    padding: 0 2vw; /* Añadir un pequeño padding para margen en pantallas grandes */
-    box-sizing: border-box; /* Asegura que el padding no rompa el diseño */
-    justify-content: center;
-    margin-left: 60px;
-    margin-top: -50px;
+    flex-direction: column; /* Mantener la disposición en columna para apilar los elementos */
+    align-items: center; /* Alinea todo al centro horizontalmente */
+    justify-content: flex-start; /* Mantiene el contenido alineado arriba */
+    padding: 0 2vw;
 }
 
 .Logo {
@@ -18,7 +17,7 @@
     align-items: center;
     justify-content: center;
     background: #313130;
-    margin-bottom: 20px;
+    margin-bottom: 20px; /* Separación entre logo e imagen */
     height: 150px;
     width: 100%;
     flex-direction: column;
@@ -27,26 +26,36 @@
 .Logo p {
     color: #fff;
     font-family: Kenia;
-    font-size: 128px; /* Mantiene el tamaño original */
+    font-size: 128px;
     letter-spacing: 80.96px;
     text-align: center;
 }
 
+.img {
+    padding: 7px;
+    max-height: 25%; /* Reducir el tamaño de la imagen al 50% del ancho */
+    height: auto; /* Mantener la relación de aspecto */
+    display: block; /* Asegurar que la imagen se comporte como un bloque */
+    margin-left: 200px;
+}
+
 .Datos {
-    display: flex;   
+    display: flex;
     flex-direction: column;
     align-items: center;
     background: #FFF;
-    width: 100%; /* Mantiene el tamaño de ancho original */
+    width: 100%;
 }
+
+
 
 .Datos p {
     color: #887A7A;
     font-family: Archivo;
-    font-size: 48px; /* Mantiene el tamaño original */
+    font-size: 48px;
     font-style: normal;
     font-weight: 400;
-    line-height: normal;    
+    line-height: normal;
     letter-spacing: 3.84px;
     display: flex;
     border: 1px solid #000;
@@ -55,73 +64,36 @@
     padding: 10px 20px;
     margin-bottom: 15px;
     border-radius: 20px;
-    box-sizing: border-box; /* Asegura que el padding no afecte el tamaño total */
+    box-sizing: border-box;
     text-align: left;
-    width: 800px; /* Mantiene el tamaño original */
-}
-
-.Columna2 img{
-    padding: 7px 7px;
-    margin-left: 200px;
+    width: 800px;
 }
 
 .Columna1 {
     display: flex;
     align-items: flex-end;
-    width: 33%; /* Mantiene el ancho original */
-    margin-bottom: 0; /* Eliminar margen negativo */
-}
-
-/* Media Queries específicas para pantallas mayores */
-@media (min-width: 1024px) and (max-width: 1440px) {
-    .Pantalla {
-        padding: 0 3vw; /* Solo ajusta el espacio del contenedor sin mover los elementos */
-    }
-}
-
-@media (min-width: 1441px) {
-    .Pantalla {
-        padding: 0 5vw; /* Aumenta un poco el padding en pantallas grandes */
-    }
-}
-
-.Boton{
-    border-radius: 23px;
-border: 1px solid #FCFCFC;
-background: #000;
-}
-
-.Boton p{
-    color: #FFF;
-font-family: Kenia;
-font-size: 40px;
-font-style: normal;
-font-weight: 400;
-line-height: normal;
-letter-spacing: 17.28px;
-text-align: center;
+    width: 33%;
+    margin-bottom: 0;
 }
 
 .Boton {
-    background-color: #000; /* Fondo negro */
-    color: #FFF; /* Letras blancas */
-    border: none; /* Elimina el borde */
+    background-color: #000;
+    color: #FFF;
+    border: none;
     border-radius: 23px;
-    padding: 15px 30px; /* Ajusta el tamaño del botón */
+    padding: 15px 30px;
     font-family: Archivo;
     font-size: 40px;
     letter-spacing: 17.28px;
     text-align: center;
-    cursor: pointer; /* Muestra una mano al pasar sobre el botón */
-    display: block; /* Asegura que esté en su propia línea */
-    margin: 20px auto 0; /* Centra el botón horizontalmente y deja un margen superior */
-    transition: background-color 0.3s ease; /* Transición suave al cambiar el color */
+    cursor: pointer;
+    display: block;
+    margin: 20px auto 0;
+    transition: background-color 0.3s ease;
+    gap: 80px;
 }
 
 .Boton:hover {
-    background-color: #333; /* Cambia el fondo al pasar el mouse */
+    background-color: #333;
 }
-
-
-
 

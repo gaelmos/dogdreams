@@ -21,6 +21,7 @@
     height: 150px;
     width: 100%;
     flex-direction: column;
+    margin-bottom: 58px;
 }
 
 .Logo p {
@@ -38,7 +39,6 @@
     gap: 19px;
     align-items: center;
     justify-self: center; /* Asegura que cada columna se centre en su celda de grid */
-    margin-top: -50px;
 }
 
 .Columna1 {
@@ -61,7 +61,6 @@
     display: flex;
     flex-direction: column;
     gap: 20px;
-    margin-top: -80px;
 }
 
 .Rectangulo {
@@ -75,9 +74,11 @@
     flex-direction: row;
     display: flex;
     align-items: center;
-    gap: 250px;
-    margin-top: -75px;
+    gap: 70px;
+    margin-top: -110px;
     margin-right: 43px;
+    flex-wrap: nowrap; /* Evita que los elementos se envuelvan a la siguiente línea */
+
 }
 
 .Row {

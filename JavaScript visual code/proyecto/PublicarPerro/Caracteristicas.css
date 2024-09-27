@@ -75,6 +75,8 @@ body {
     background: #0e0d0b;
     padding: 15px 80px;
     border-radius: 19px;
+    margin-top: 10px;
+    margin-left: 30px;
 }
 
 .Publicar button {
