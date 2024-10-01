@@ -52,6 +52,7 @@ body {
     align-items: center;
     width: 200px;
     height: auto;
+    margin-right: 40px;
 }
 
 .Columnas {
@@ -63,7 +64,7 @@ body {
     max-width: 400px;
 }
 
-.Columnas input {
+.Columnas input, h3 {
     color: #887A7A;
     font-size: 24px;
     padding: 15px;
