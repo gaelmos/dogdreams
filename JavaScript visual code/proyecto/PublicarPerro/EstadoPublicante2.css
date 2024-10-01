@@ -37,13 +37,14 @@ body {
     display: flex;
     align-items: center;
     justify-content: center;
-    gap: 50px;
+    gap: 60px;
     background-color: #fff;
     padding: 30px;
     border-radius: 10px;
     box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
     width: 80%;
     max-width: 1200px;
+    height: 700px;
 }
 
 .Patas {
@@ -52,31 +53,19 @@ body {
     align-items: center;
     width: 200px;
     height: auto;
+    margin-right: 20px;
 }
 
 .Columnas {
     display: flex;
     flex-direction: column;
     justify-content: center;
-    gap: 80px;
+    gap: 40px;
     width: 100%;
-    max-width: 400px;
-    align-items: center;
-    margin-left: 250px;
+    max-width: 500px;
 }
 
-.Columnas p{
-    color: #000;
-font-family: Archivo;
-font-size: 64px;
-font-style: normal;
-font-weight: 400;
-line-height: normal;
-letter-spacing: 8.96px;
-}
-
-
-.Columnas input {
+.Columnas p {
     color: #887A7A;
     font-size: 24px;
     padding: 15px;
@@ -92,11 +81,12 @@ letter-spacing: 8.96px;
     display: flex;
     justify-content: center;
     align-items: center;
-    padding: 20px;
+    padding: 25x;
     background-color: #F1C144;
     border-radius: 10px;
     cursor: pointer;
     transition: background-color 0.3s ease;
+    height: 80px;
 }
 
 .Crear button {
@@ -111,17 +101,23 @@ letter-spacing: 8.96px;
     background-color: #e1a538;
 }
 
+.Crear button p{
+    color: #000;
+    border: none;
+    box-shadow: none;
+}
+
 .FotoPerfil {
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    gap: 10px;
+    gap: 15px;
 }
 
 .CuadroBlanco {
     width: 200px;
-    height: 200px;
+    height: 250px;
     background-color: #fff;
     border: 2px solid #000;
     border-radius: 10px;
@@ -137,65 +133,3 @@ letter-spacing: 8.96px;
     color: #000;
 }
 
-.Row{
-    display: flex;
-    flex-direction: row;
-    gap: 100px;
-}
-
-.Patas{
-    margin-bottom: 130px;
-}
-
-.Row2{
-    display: flex;
-    flex-direction: row;
-    gap: 60px;
-    align-items: center;
-    justify-content: center;
-    margin-left: 50px;
-}
-
-.Row2 button {
-    background-color: #e1a538;
-    border: none;
-    font-size: 24px;
-    font-family: Archivo, sans-serif;
-    cursor: pointer;
-    border-radius: 15px;
-    width: 470px;
-    height: 100px;
-}
-
-
-.Row2 button:hover {
-    background-color: #e1a538;
-}
-
-.Row2 p{
-    white-space: nowrap;
-}
-
-.Row2 button p{
-    color: #000;
-    border: none;
-    box-shadow: none;
-}
-
-#contraseña{
-    white-space: nowrap;
-    width: 653px;
-height: 44px;
-flex-shrink: 0;
-color: #000;
-font-family: Kenia;
-font-size: 40px;
-font-style: normal;
-font-weight: 400;
-line-height: normal;
-letter-spacing: 3.84px;
-margin-left: 150px;
-margin-top: -40px;
-cursor: pointer;
-text-decoration: none;
-}
