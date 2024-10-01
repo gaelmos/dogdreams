@@ -37,14 +37,14 @@ body {
     display: flex;
     align-items: center;
     justify-content: center;
-    gap: 60px;
+    gap: 200px;
     background-color: #fff;
     padding: 30px;
     border-radius: 10px;
     box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
     width: 80%;
     max-width: 1200px;
-    height: 700px;
+    flex-direction: row;
 }
 
 .Patas {
@@ -53,14 +53,13 @@ body {
     align-items: center;
     width: 200px;
     height: auto;
-    margin-right: 20px;
 }
 
 .Columnas {
     display: flex;
     flex-direction: column;
     justify-content: center;
-    gap: 40px;
+    gap: 15px;
     width: 100%;
     max-width: 500px;
 }
@@ -72,7 +71,7 @@ body {
     border: 1px solid #000;
     box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
     outline: none;
-    border-radius: 10px;
+    border-radius: 15px;
     width: 100%;
     text-align: left;
 }
@@ -81,12 +80,11 @@ body {
     display: flex;
     justify-content: center;
     align-items: center;
-    padding: 25x;
-    background-color: #F1C144;
+    padding: 20px;
+    background-color: #0c0c0c;
     border-radius: 10px;
     cursor: pointer;
     transition: background-color 0.3s ease;
-    height: 80px;
 }
 
 .Crear button {
@@ -95,16 +93,18 @@ body {
     font-size: 24px;
     font-family: Archivo, sans-serif;
     cursor: pointer;
+    width: 250px;
+    height: 60px;
 }
 
 .Crear button:hover {
-    background-color: #e1a538;
+    background-color: #35352f;
 }
 
 .Crear button p{
-    color: #000;
-    border: none;
-    box-shadow: none;
+    color:#e1c838 ;
+    letter-spacing: 15px;
+    font-size: 30px;
 }
 
 .FotoPerfil {
@@ -112,12 +112,12 @@ body {
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    gap: 15px;
+    gap: 10px;
 }
 
 .CuadroBlanco {
-    width: 200px;
-    height: 250px;
+    width: 270px;
+    height: 300px;
     background-color: #fff;
     border: 2px solid #000;
     border-radius: 10px;
@@ -133,3 +133,7 @@ body {
     color: #000;
 }
 
+.FotoPerfil h2{
+    margin-right: 140px;
+    margin-bottom: 10px;
+}
