@@ -41,7 +41,7 @@ document.getElementById('registerForm').addEventListener('submit', async functio
                 console.log(error);
             }
         } catch (error) {
-            console.error('Error al enviar los datos:', error);
+            console.log(error);
             alert('Error al registrarse. Inténtelo de nuevo más tarde.');
             return;
         }
