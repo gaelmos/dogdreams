@@ -150,7 +150,7 @@ letter-spacing: 8.96px;
 .Row2{
     display: flex;
     flex-direction: row;
-    gap: 60px;
+    gap: 45px;
     align-items: center;
     justify-content: center;
     margin-left: 50px;
@@ -163,7 +163,7 @@ letter-spacing: 8.96px;
     font-family: Archivo, sans-serif;
     cursor: pointer;
     border-radius: 15px;
-    width: 470px;
+    width: 430px;
     height: 100px;
 }
 
@@ -174,6 +174,8 @@ letter-spacing: 8.96px;
 
 .Row2 p{
     white-space: nowrap;
+    font-size: 60px;
+    letter-spacing: 1.5px;
 }
 
 .Row2 button p{
