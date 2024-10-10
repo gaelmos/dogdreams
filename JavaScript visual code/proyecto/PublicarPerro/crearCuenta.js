@@ -14,8 +14,8 @@ document.getElementById('registerForm').addEventListener('submit', async functio
     reader.onloadend = async function() {
         const user = {
             nombre: fullName,
-            mail: email,
             dni: dni,
+            mail: email,
             numero: phone,
             direccion: address,
             contraseña: password,
