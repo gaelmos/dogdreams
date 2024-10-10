@@ -23,7 +23,7 @@ document.getElementById('registerForm').addEventListener('submit', async functio
         };
 
         try {
-            const response = await fetch('postgres://default:Bla6HiYkjq7G@ep-muddy-snowflake-a4oyv7a0-pooler.us-east-1.aws.neon.tech:5432/verceldb?sslmode=require', {
+            const response = await fetch('https://vercel.com/login?next=%2Fgael-s-projects-4fcba6e9%2Fback-dogdreams%2FBLKSwyTXkPJSeGSGQveoSegKqFmq', {
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/json'
