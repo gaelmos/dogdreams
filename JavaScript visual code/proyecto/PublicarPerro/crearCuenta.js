@@ -23,7 +23,7 @@ document.getElementById('registerForm').addEventListener('submit', async functio
         };
 
         try {
-            const response = fetch('https://vercel.com/login?next=%2Fgael-s-projects-4fcba6e9%2Fback-dogdreams%2FBLKSwyTXkPJSeGSGQveoSegKqFmq', {
+            const response = fetch('https://vercel.com/login?next=%2Fgael-s-projects-4fcba6e9%2Fback-dogdreams%2FBLKSwyTXkPJSeGSGQveoSegKqFmq/usuario', {
                 method: 'POST',
                 mode: "no-cors",
                 headers: {
