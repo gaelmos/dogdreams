@@ -64,6 +64,12 @@ body {
     max-width: 500px;
 }
 
+.Salir{
+    flex-direction: row;
+    display: flex;
+    align-items: center;
+}
+
 .Columnas p {
     color: #887A7A;
     font-size: 24px;
@@ -150,3 +156,4 @@ body {
     font-family: Archivo;
     margin-top: 10px;
 }
+
