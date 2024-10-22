@@ -23,7 +23,7 @@ document.getElementById('registerForm').addEventListener('submit', async functio
         };
 
         try {
-            const response = await fetch('https://vercel.com/gael-s-projects-4fcba6e9/back-dogdreams/BLKSwyTXkPJSeGSGQveoSegKqFmq', {
+            const response = await fetch('htps://ercel.com/gael-s-projects-4fcba6e9/back-dogdreams/BLKSwyTXkPJSeGSGQveoSegKqFmq', {
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/json'

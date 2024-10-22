@@ -1,13 +1,18 @@
 document.getElementById('registerForm').addEventListener('submit', async function(event) {
     event.preventDefault();
 
-    const dni = document.getElementById('dni').value;
-    const fullName = document.getElementById('fullName').value;
-    const email = document.getElementById('email').value;
-    const phone = document.getElementById('phone').value;
-    const address = document.getElementById('address').value;
-    const password = document.getElementById('password').value;
+    const dni = document.getElementById('dni').value.trim();
+    const fullName = document.getElementById('fullName').value.trim();
+    const email = document.getElementById('email').value.trim();
+    const phone = document.getElementById('phone').value.trim();
+    const address = document.getElementById('address').value.trim();
+    const password = document.getElementById('password').value.trim();
     const photoFile = document.getElementById('photo').files[0];
+
+    if (!dni || !fullName || !email || !phone || !address || !password) {
+        alert('Por favor, complete todos los campos.');
+        return;
+    }
 
     const reader = new FileReader();
 
@@ -23,9 +28,8 @@ document.getElementById('registerForm').addEventListener('submit', async functio
         };
 
         try {
-            const response = fetch('https://vercel.com/login?next=%2Fgael-s-projects-4fcba6e9%2Fback-dogdreams%2FBLKSwyTXkPJSeGSGQveoSegKqFmq/usuario', {
+            const response = await fetch('http://localhost:3000/usuario', {
                 method: 'POST',
-                mode: "no-cors",
                 headers: {
                     'Content-Type': 'application/json'
                 },
@@ -34,13 +38,13 @@ document.getElementById('registerForm').addEventListener('submit', async functio
 
             if (response.ok) {
                 alert('Usuario registrado con éxito');
-                window.location.href = 'pagina_principal.html';
+                window.location.href = 'als';
             } else {
                 const errorData = await response.json();
                 alert(`Error: ${errorData.error}`);
             }
         } catch (error) {
-            console.error('Error al enviar los datos:', error);
+            console.error('Error al enviar los datos:', error.message);
             alert('Error al registrarse. Inténtelo de nuevo más tarde.');
         }
     };
