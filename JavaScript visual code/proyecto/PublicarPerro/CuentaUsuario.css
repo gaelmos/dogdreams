@@ -6,23 +6,25 @@
 
 body {
     font-family: 'Archivo', sans-serif;
-    background-color: #f5f5f5;
+    background-color: #f0f0f0; /* Color de fondo suave */
+    color: #333; /* Texto más oscuro para mejor contraste */
 }
 
 .Logo {
     display: flex;
     align-items: center;
     justify-content: center;
-    background-color: #313130;
-    padding: 20px 0;
+    background-color: #222; /* Color de fondo de la Logo */
+    padding: 20px;
+    border-bottom: 5px solid #555; /* Borde inferior en gris oscuro */
     margin-bottom: 20px;
 }
 
 .Logo p {
-    color: #E7B639;
+    color: #f0d124; /* Cambié el color a blanco para mayor contraste */
     font-family: 'Archivo Black', sans-serif;
     font-size: 100px;
-    letter-spacing: 30.96px;
+    letter-spacing: 5px; /* Espaciado de letras */
 }
 
 .Pantalla {
@@ -40,8 +42,8 @@ body {
     gap: 200px;
     background-color: #fff;
     padding: 30px;
-    border-radius: 10px;
-    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+    border-radius: 15px; /* Radio de bordes */
+    box-shadow: 0px 4px 20px rgba(0, 0, 0, 0.15); /* Sombras más marcadas */
     width: 80%;
     max-width: 1200px;
     flex-direction: row;
@@ -65,15 +67,18 @@ body {
 }
 
 .Columnas p {
-    color: #887A7A;
-    font-size: 24px;
+    color: #555; /* Color de texto en tono suave */
+    font-size: 20px; /* Tamaño de fuente */
     padding: 15px;
-    border: 1px solid #000;
-    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
-    outline: none;
-    border-radius: 15px;
-    width: 100%;
-    text-align: left;
+    border: 1px solid #555; /* Cambié el color del borde a gris */
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.15); /* Sombras más suaves */
+    border-radius: 10px; /* Radio de bordes */
+    transition: all 0.2s ease; /* Transición suave al pasar el cursor */
+}
+
+.Columnas p:hover {
+    transform: translateY(-2px); /* Efecto al pasar el cursor */
+    box-shadow: 0px 8px 20px rgba(0, 0, 0, 0.2); /* Aumento de sombra al hacer hover */
 }
 
 .Crear {
@@ -81,10 +86,9 @@ body {
     justify-content: center;
     align-items: center;
     padding: 20px;
-    background-color: #0c0c0c;
+    background-color: #444; /* Cambié el color de fondo del botón a gris oscuro */
     border-radius: 10px;
-    cursor: pointer;
-    transition: background-color 0.3s ease;
+    transition: background-color 0.3s, transform 0.2s; /* Transición para el efecto hover */
 }
 
 .Crear button {
@@ -95,14 +99,16 @@ body {
     cursor: pointer;
     width: 250px;
     height: 60px;
+    color: #fff; /* Texto del botón en blanco */
 }
 
 .Crear button:hover {
-    background-color: #35352f;
+    background-color: #666; /* Color de fondo al hacer hover en gris */
+    transform: scale(1.05); /* Efecto de aumento al pasar el cursor */
 }
 
-.Crear button p{
-    color:#e1c838 ;
+.Crear button p {
+    color: #f7c02a; /* Color del texto del botón en blanco */
     letter-spacing: 15px;
     font-size: 30px;
 }
@@ -119,7 +125,8 @@ body {
     width: 270px;
     height: 300px;
     background-color: #fff;
-    border: 2px solid #000;
+    border: 2px solid #555; /* Cambié el color del borde a gris oscuro */
+    box-shadow: 0px 2px 10px rgba(0, 0, 0, 0.1); /* Sombras más suaves */
     border-radius: 10px;
     margin-bottom: 10px;
 }
@@ -130,10 +137,17 @@ body {
 
 .ImagenTextoArchivo p {
     font-size: 18px;
-    color: #000;
+    color: #000; /* Color del texto en negro */
 }
 
-.FotoPerfil h2{
+.FotoPerfil h2 {
     margin-right: 140px;
     margin-bottom: 10px;
+}
+
+/* Estilo específico para "Cuenta Usuario" y "Inicio" */
+.cuenta-usuario, .inicio {
+    color: #E7B639; /* Color amarillo */
+    font-size: 24px; /* Tamaño de fuente */
+    font-weight: bold; /* Negrita para mayor énfasis */
 }
