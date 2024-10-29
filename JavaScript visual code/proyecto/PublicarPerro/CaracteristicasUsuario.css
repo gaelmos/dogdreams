@@ -35,7 +35,7 @@ body {
     justify-content: center;
     align-items: center;
     padding: 40px;
-    height: 100vh;
+    height: 77vh;
     background: linear-gradient(135deg, #fafafa, #e0e0e0);
 }
 
@@ -51,12 +51,9 @@ body {
     box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
     width: 80%;
     max-width: 1200px;
-    transition: transform 0.3s ease;
+    height: 600px;
 }
 
-.Formulario:hover {
-    transform: translateY(-10px);
-}
 
 /* Patas */
 .Patas {
@@ -167,7 +164,7 @@ body {
 .Circulos {
     display: flex;
     flex-direction: row;
-    gap: 300px;
+    gap: 350px;
     font-family: 'Archivo', sans-serif;
     margin-top: 10px;
 }
