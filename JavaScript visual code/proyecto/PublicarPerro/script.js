@@ -18,7 +18,7 @@ document.getElementById('registerForm').addEventListener('submit', async (event)
     };
 
     try {
-        const response = await fetch('http://localhost:3000/api/perro', {
+        const response = await fetch('http://localhost:3000/api/perros', {
             method: 'POST',
             body: JSON.stringify(dogData),
             headers: {
@@ -30,7 +30,7 @@ document.getElementById('registerForm').addEventListener('submit', async (event)
             const result = await response.json();
             console.log('Perro guardado:', result);
             // Redirigir a otra página donde mostrar los perros
-            window.location.href = 'dogs.html';
+            window.location.href = 'BusquedaPerro.html';
         } else {
             const error = await response.json();
             console.error('Error al guardar los datos del perro:', error);
