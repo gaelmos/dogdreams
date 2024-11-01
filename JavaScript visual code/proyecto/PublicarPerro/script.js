@@ -14,7 +14,6 @@ document.getElementById('registerForm').addEventListener('submit', async (event)
         nacimiento: formData.get('nacimiento'),
         tamaño: formData.get('tamaño'),
         dificultades: formData.get('dificultades'),
-        dniDueño: '12345678' // Cambia esto por el valor real del DNI del dueño
     };
 
     try {
