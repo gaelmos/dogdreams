@@ -8,8 +8,6 @@ document.getElementById('registerForm').addEventListener('submit', async (event)
     const dogData = {
         nombre: formData.get('nombre'),
         raza: formData.get('raza'),
-        descripcion: formData.get('descripcion'),
-        foto: formData.get('photo'), // Aquí asegúrate de que 'photo' sea el nombre del input en tu formulario
         color: formData.get('color'),
         nacimiento: formData.get('nacimiento'),
         tamaño: formData.get('tamaño'),
