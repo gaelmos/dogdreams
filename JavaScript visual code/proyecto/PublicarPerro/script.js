@@ -15,7 +15,7 @@ document.getElementById('registerForm').addEventListener('submit', async (event)
     };
 
     try {
-        const response = await fetch('http://localhost:3000/api/perros', {
+        const response = await fetch('http://localhost:3000/perros', {
             method: 'POST',
             body: JSON.stringify(dogData),
             headers: {
