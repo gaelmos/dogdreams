@@ -6,7 +6,7 @@ document.getElementById('registerForm').addEventListener('submit', async (event)
 
     const formData = new FormData(event.target); // Crea un objeto FormData a partir del formulario
     const dogData = {
-        nombre: formData.get('nombre'),
+        nombre: formData.get("nombre"),
         raza: formData.get('raza'),
         color: formData.get('color'),
         nacimiento: formData.get('nacimiento'),

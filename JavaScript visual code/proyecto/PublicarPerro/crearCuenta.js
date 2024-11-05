@@ -38,7 +38,7 @@ document.getElementById('registerForm').addEventListener('submit', async functio
 
             if (response.ok) {
                 alert('Usuario registrado con éxito');
-                window.location.href = 'als';
+                window.location.href = 'Caracteristicas2.html';
             } else {
                 const errorData = await response.json();
                 alert(`Error: ${errorData.error}`);
