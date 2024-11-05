@@ -34,7 +34,7 @@ body {
     justify-content: center;
     align-items: center;
     padding: 40px;
-    min-height: 77vh;
+    max-height: 80vh;
     background-color: #fafafa;
 }
 
@@ -125,6 +125,7 @@ body {
     align-items: center;
     justify-content: center;
     gap: 10px;
+    text-align: center;
 }
 
 .CuadroBlanco {
@@ -139,6 +140,15 @@ body {
 
 .FotoPerfil input {
     margin-top: 10px;
+}
+
+.Descripcion{
+   align-items: center;
+   font-size: 18px;
+}
+
+.Descripcion input{
+    font-size: 18px;
 }
 
 /* Imagen y texto */
