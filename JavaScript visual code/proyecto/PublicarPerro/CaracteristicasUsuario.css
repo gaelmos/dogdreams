@@ -1,3 +1,4 @@
+/* Reset básico */
 * {
     margin: 0;
     padding: 0;
@@ -6,9 +7,11 @@
 
 body {
     font-family: 'Archivo', sans-serif;
-    background-color: #f5f5f5;
+    background: linear-gradient(135deg, #f5f5f5 0%, #e0e0e0 100%);
+    color: #313130;
 }
 
+/* Logo */
 .Logo {
     display: flex;
     align-items: center;
@@ -23,87 +26,102 @@ body {
     font-family: 'Archivo Black', sans-serif;
     font-size: 100px;
     letter-spacing: 30.96px;
+    text-shadow: 3px 3px 5px rgba(0, 0, 0, 0.2);
 }
 
+/* Pantalla */
 .Pantalla {
     display: flex;
     justify-content: center;
     align-items: center;
     padding: 40px;
-    height: 100vh;
+    height: 77vh;
+    background: linear-gradient(135deg, #fafafa, #e0e0e0);
 }
 
+/* Formulario */
 .Formulario {
     display: flex;
     align-items: center;
     justify-content: center;
-    gap: 50px;
-    background-color: #fff;
-    padding: 30px;
-    border-radius: 10px;
-    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+    gap: 150px;
+    background-color: #ffffff;
+    padding: 40px;
+    border-radius: 20px;
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
     width: 80%;
     max-width: 1200px;
+    height: 600px;
 }
 
+
+/* Patas */
 .Patas {
     display: flex;
     justify-content: center;
     align-items: center;
     width: 200px;
     height: auto;
+    margin-right: 30px;
 }
 
+/* Columnas */
 .Columnas {
     display: flex;
     flex-direction: column;
     justify-content: center;
-    gap: 15px;
+    gap: 25px;
     width: 100%;
-    max-width: 400px;
+    max-width: 500px;
 }
 
 .Columnas p {
-    color: #887A7A;
+    color: #4f4f4f;
     font-size: 24px;
     padding: 15px;
-    border: 1px solid #000;
-    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
-    outline: none;
+    border: 1px solid #ddd;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
     border-radius: 10px;
-    width: 100%;
     text-align: left;
+    background-color: #ffffff;
 }
 
+/* Botón Crear */
 .Crear {
     display: flex;
     justify-content: center;
     align-items: center;
     padding: 20px;
-    background-color: #F1C144;
-    border-radius: 10px;
+    background-color: #000000;
+    border-radius: 50px;
     cursor: pointer;
-    transition: background-color 0.3s ease;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+    width: 300px;
+    height: 80px;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2);
+}
+
+.Crear:hover {
+    background-color: #4d4a46;
+    transform: translateY(-5px);
 }
 
 .Crear button {
     background-color: transparent;
     border: none;
     font-size: 24px;
-    font-family: Archivo, sans-serif;
+    font-family: 'Archivo', sans-serif;
     cursor: pointer;
 }
 
-.Crear button:hover {
-    background-color: #e1a538;
+.Crear button p {
+    color: #FFF85A;
+    font-size: 30px;
+    letter-spacing: 8px;
+    margin: 0;
 }
 
-.Crear button p{
-    color: #000;
-    border: none;
-    box-shadow: none;
-}
-
+/* FotoPerfil */
 .FotoPerfil {
     display: flex;
     flex-direction: column;
@@ -113,19 +131,50 @@ body {
 }
 
 .CuadroBlanco {
-    width: 200px;
-    height: 200px;
-    background-color: #fff;
-    border: 2px solid #000;
-    border-radius: 10px;
-    margin-bottom: 10px;
+    width: 250px;
+    height: 300px;
+    background-color: #ffffff;
+    border: 2px solid #dddddd;
+    border-radius: 15px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
 }
 
 .FotoPerfil input {
     margin-top: 10px;
 }
 
+/* Texto debajo de la imagen */
 .ImagenTextoArchivo p {
     font-size: 18px;
-    color: #000;
+    color: #4f4f4f;
+}
+
+/* Dificultades */
+.Dificultades {
+    font-size: 23px;
+    text-align: center;
+    letter-spacing: 5px;
+    white-space: nowrap;
+    font-family: 'Kenia', cursive;
+    color: #313130;
+    text-shadow: 1px 1px 4px rgba(0, 0, 0, 0.2);
+}
+
+/* Circulos */
+.Circulos {
+    display: flex;
+    flex-direction: row;
+    gap: 350px;
+    font-family: 'Archivo', sans-serif;
+    margin-top: 10px;
+}
+
+/* Hover Efectos generales */
+.Rectangulo, .CuadroBlanco, .Columnas p {
+    transition: box-shadow 0.3s ease, transform 0.3s ease;
+}
+
+.Rectangulo:hover, .CuadroBlanco:hover, .Columnas p:hover {
+    box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.2);
+    transform: translateY(-5px);
 }

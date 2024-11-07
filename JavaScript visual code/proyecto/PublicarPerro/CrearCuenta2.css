@@ -21,8 +21,8 @@ body {
 .Logo p {
     color: #E7B639;
     font-family: 'Archivo Black', sans-serif;
-    font-size: 128px;
-    letter-spacing: 40.96px;
+    font-size: 100px;
+    letter-spacing: 30.96px;
 }
 
 .Pantalla {
@@ -30,7 +30,7 @@ body {
     justify-content: center;
     align-items: center;
     padding: 40px;
-    height: 100vh;
+    height: 77vh;
 }
 
 .Formulario {
@@ -63,18 +63,30 @@ body {
     max-width: 400px;
 }
 
+/* Estilo para los campos de texto (inputs) */
 .Columnas input {
     color: #887A7A;
     font-size: 24px;
     padding: 15px;
-    border: 1px solid #000;
-    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+    border: 1px solid #ccc;
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.1);
     outline: none;
     border-radius: 10px;
     width: 100%;
     text-align: left;
+    background-color: #fff;
+    transition: box-shadow 0.3s ease, border-color 0.3s ease, background-color 0.3s ease, transform 0.3s ease; /* Transición con movimiento */
 }
 
+/* Estilo al hacer focus (cuando se escribe) */
+.Columnas input:focus {
+    box-shadow: 0px 6px 12px rgba(0, 0, 0, 0.2);
+    border-color: #E7B639;
+    background-color: #fafafa;
+    transform: translateY(-5px); /* Mover hacia arriba al hacer focus */
+}
+
+/* Estilo para el botón "Crear" */
 .Crear {
     display: flex;
     justify-content: center;
@@ -83,36 +95,62 @@ body {
     background-color: #F1C144;
     border-radius: 10px;
     cursor: pointer;
-    transition: background-color 0.3s ease;
+    transition: background-color 0.3s ease, box-shadow 0.3s ease, transform 0.3s ease; /* Transición con movimiento */
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.Crear:hover {
+    background-color: #e1a538;
+    box-shadow: 0px 6px 12px rgba(0, 0, 0, 0.2);
+    transform: translateY(-5px); /* Mover hacia arriba al hacer hover */
 }
 
 .Crear button {
     background-color: transparent;
     border: none;
     font-size: 24px;
-    font-family: Archivo, sans-serif;
+    font-family: 'Archivo', sans-serif;
     cursor: pointer;
 }
 
-.Crear button:hover {
-    background-color: #e1a538;
+.Crear button p {
+    color: #fff;
+    font-size: 30px;
+    letter-spacing: 8px;
 }
 
+/* Estilos para FotoPerfil */
 .FotoPerfil {
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    gap: 10px;
+    gap: 15px; /* Aumentar espacio entre elementos */
+    text-align: center; /* Centrar texto */
 }
 
 .CuadroBlanco {
-    width: 200px;
-    height: 200px;
+    width: 250px;
+    height: 250px; /* Hacer el cuadro un poco más grande */
     background-color: #fff;
-    border: 2px solid #000;
-    border-radius: 10px;
-    margin-bottom: 10px;
+    border: 8px solid #fffcf5; /* Borde de color */
+    border-radius: 20px; /* Bordes más redondeados */
+    box-shadow: 0px 6px 10px rgba(0, 0, 0, 0.15); /* Sombra más suave */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden; /* Asegurarse de que no se salga la imagen */
+}
+
+.CuadroBlanco img {
+    width: 100%; /* Asegura que la imagen llene el cuadro */
+    height: auto; /* Mantiene la proporción de la imagen */
+    border-radius: 15px; /* Bordes de imagen redondeados */
+    transition: transform 0.3s ease; /* Transición al pasar el mouse */
+}
+
+.CuadroBlanco:hover img {
+    transform: scale(1.05); /* Aumentar tamaño de imagen al pasar el mouse */
 }
 
 .FotoPerfil input {
@@ -122,4 +160,23 @@ body {
 .ImagenTextoArchivo p {
     font-size: 18px;
     color: #000;
+    font-family: 'Archivo', sans-serif;
+    text-align: center; /* Centrar texto */
+}
+
+/* Dificultades */
+.Dificultades {
+    font-size: 23px;
+    text-align: center;
+    letter-spacing: 5px;
+    white-space: nowrap;
+    font-family: Kenia;
+}
+
+.Circulos {
+    display: flex;
+    flex-direction: row;
+    gap: 300px;
+    font-family: Archivo;
+    margin-top: 10px;
 }

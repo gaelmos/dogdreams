@@ -15,7 +15,6 @@
     </div>
 
     <div class="Pantalla">
-
         <form id="registerForm" class="Formulario">
             <div class="Patas">
                 <img src="../Assets/Captura de pantalla 2024-09-24 134343.png" alt="patas.png">
@@ -23,22 +22,25 @@
 
             <div class="Columnas">
                 <div class="columnaMail">
-                    <input id="email" type="text" placeholder="Nombre" required>
+                    <input name="nombre" type="text" placeholder="Nombre" required>
                 </div>
                 <div class="Contraseña">
-                    <input id="password" type="text" placeholder="Raza" required>
+                    <input name="raza" type="text" placeholder="Raza" required>
                 </div>
                 <div class="DNI">
-                    <input id="dni" type="date" placeholder="Nacimiento" required>
+                    <input name="nacimiento" type="date" placeholder="Nacimiento" required>
                 </div>
                 <div class="Telefono">
-                    <input id="phone" type="text" placeholder="Color" required>
+                    <input name="color" type="text" placeholder="Color" required>
                 </div>
                 <div class="NombreApellido">
-                    <input id="fullName" type="text" placeholder="Tamaño" required>
+                    <input name="tamaño" type="text" placeholder="Tamaño" required>
                 </div>
-                <div class="Ubicacion">
-                    <input id="address" type="text" placeholder="Dificultades si/no" required>
+                <div class="Dificultades">
+                    <input name="dificultades" type="text" placeholder="Dificultades (si/no)" required>
+                </div>
+                <div class="Dificultades">
+                    <input name="dificultades" type="text" placeholder="Dificultad/enfermdad que tiene" required>
                 </div>
                 <div class="Crear">
                     <button type="submit"><p>Publicar</p></button>
@@ -46,16 +48,19 @@
             </div>
 
             <div class="FotoPerfil">
-                <div class="CuadroBlanco"></div> <!-- Cuadro blanco para la foto -->
+                <div class="Descripcion">
+                    <p>Breve descripción</p>
+                    <input type="text">
+                </div>
+                <div class="CuadroBlanco"></div>
                 <div class="ImagenTextoArchivo">
                     <p>Insertar foto de perfil</p>
-                    <input id="photo" type="file" accept="image/*" required>
+                    <input name="photo" type="file" accept="image/*" required>
                 </div>
             </div>
         </form>
-
     </div>
 
-    <script src="crearCuenta.js"></script>
+    <script src="script.js"></script>
 </body>
 </html>

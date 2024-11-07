@@ -75,7 +75,10 @@ document.getElementById('registerForm').addEventListener('submit', async functio
         };
 
         try {
-            const response = await fetch('back-dogdreams-mqdn6glod-gael-s-projects-4fcba6e9.vercel.app', {
+
+/*             const response = await fetch('back-dogdreams-mqdn6glod-gael-s-projects-4fcba6e9.vercel.app', {})
+ */
+            const response = await fetch('htps://ercel.com/gael-s-projects-4fcba6e9/back-dogdreams/BLKSwyTXkPJSeGSGQveoSegKqFmq', {
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/json'
@@ -84,16 +87,19 @@ document.getElementById('registerForm').addEventListener('submit', async functio
             });
 
             if (response.ok) {
+                console.log(user);
                 alert('Usuario registrado con éxito');
-                window.location.href = 'pagina_principal.html';
+                return window.location.href = 'pagina_principal.html';
             } else {
                 const errorData = await response.json();
-                /*alert(`Error: ${errorData.error}`);*/
+
+                alert(`Error: ${errorData.error}`);
                 console.error(errorData)
             }
         } catch (error) {
-            console.error('Error al enviar los datos:', error);
+            console.log(error);
             alert('Error al registrarse. Inténtelo de nuevo más tarde.');
+            return;
         }
     };
 

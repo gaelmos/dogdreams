@@ -1,3 +1,4 @@
+/* General */
 * {
     margin: 0;
     padding: 0;
@@ -9,6 +10,7 @@ body {
     background-color: #f5f5f5;
 }
 
+/* Logo */
 .Logo {
     display: flex;
     align-items: center;
@@ -25,12 +27,13 @@ body {
     letter-spacing: 30.96px;
 }
 
+/* Pantalla */
 .Pantalla {
     display: flex;
     justify-content: center;
     align-items: center;
     padding: 40px;
-    height: 100vh;
+    height: 77vh;
 }
 
 .Formulario {
@@ -46,14 +49,6 @@ body {
     max-width: 1200px;
 }
 
-.Patas {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    width: 200px;
-    height: auto;
-}
-
 .Columnas {
     display: flex;
     flex-direction: column;
@@ -65,119 +60,100 @@ body {
     margin-left: 250px;
 }
 
-.Columnas p{
+.Columnas p {
     color: #000;
-font-family: Archivo;
-font-size: 64px;
-font-style: normal;
-font-weight: 400;
-line-height: normal;
-letter-spacing: 8.96px;
+    font-family: Archivo;
+    font-size: 64px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+    letter-spacing: 8.96px;
 }
 
-
+/* Inputs */
 .Columnas input {
-    color: #887A7A;
+    color: #333;
     font-size: 24px;
     padding: 15px;
-    border: 1px solid #000;
-    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+    border: 2px solid #d1d1d1;
+    border-radius: 8px;
     outline: none;
-    border-radius: 10px;
     width: 100%;
-    text-align: left;
+    box-shadow: inset 0px 2px 4px rgba(0, 0, 0, 0.1);
+    transition: all 0.3s ease;
 }
 
-.Crear {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    padding: 20px;
-    background-color: #F1C144;
-    border-radius: 10px;
-    cursor: pointer;
-    transition: background-color 0.3s ease;
+.Columnas input::placeholder {
+    color: #a9a9a9;
 }
 
-.Crear button {
-    background-color: transparent;
-    border: none;
-    font-size: 24px;
-    font-family: Archivo, sans-serif;
-    cursor: pointer;
+.Columnas input:focus {
+    border-color: #e1a538;
+    box-shadow: 0px 4px 10px rgba(225, 165, 56, 0.3);
+    transform: scale(1.02);
 }
 
-.Crear button:hover {
-    background-color: #e1a538;
-}
-
-.FotoPerfil {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    gap: 10px;
-}
-
-.CuadroBlanco {
-    width: 200px;
-    height: 200px;
-    background-color: #fff;
-    border: 2px solid #000;
-    border-radius: 10px;
-    margin-bottom: 10px;
-}
-
-.FotoPerfil input {
-    margin-top: 10px;
-}
-
-.ImagenTextoArchivo p {
-    font-size: 18px;
-    color: #000;
-}
-
-.Row{
+/* Row and Buttons */
+.Row {
     display: flex;
     flex-direction: row;
     gap: 100px;
 }
 
-.Patas{
+.Patas {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 200px;
+    height: auto;
     margin-bottom: 130px;
 }
 
-.Row2{
+.Row2 {
     display: flex;
     flex-direction: row;
-    gap: 60px;
+    gap: 45px;
     align-items: center;
     justify-content: center;
     margin-left: 50px;
 }
 
+/* Botones */
 .Row2 button {
     background-color: #e1a538;
-    border: none;
+    border: 2px solid #d49c35;
     font-size: 24px;
     font-family: Archivo, sans-serif;
+    color: #000;
     cursor: pointer;
     border-radius: 15px;
-    width: 470px;
+    width: 430px;
     height: 100px;
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.2);
+    transition: all 0.3s ease;
 }
 
+.Row2 button p {
+    color: inherit;
+    margin: 0;
+}
 
 .Row2 button:hover {
-    background-color: #e1a538;
+    background-color: #e1b54e;
+    border-color: #c08b2e;
+    box-shadow: 0px 6px 12px rgba(0, 0, 0, 0.3);
+    transform: translateY(-2px);
 }
 
-.Row2 p{
+.Row2 button:active {
+    background-color: #cf9b3b;
+    box-shadow: 0px 3px 5px rgba(0, 0, 0, 0.2);
+    transform: translateY(1px);
+}
+
+.Row2 p {
     white-space: nowrap;
-}
-
-.Row2 button p{
+    font-size: 60px;
+    letter-spacing: 1.5px;
     color: #000;
-    border: none;
-    box-shadow: none;
 }
