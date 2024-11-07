@@ -14,17 +14,18 @@ document.getElementById('registerForm').addEventListener('submit', async functio
     reader.onloadend = async function() {
         const user = {
             nombre: fullName,
-            mail: email,
             dni: dni,
+            mail: email,
             numero: phone,
             direccion: address,
             contraseña: password,
-            foto: reader.result // Base64 string
+            foto: reader.result 
         };
 
         try {
-            const response = await fetch('postgres://default:Bla6HiYkjq7G@ep-muddy-snowflake-a4oyv7a0-pooler.us-east-1.aws.neon.tech:5432/verceldb?sslmode=require', {
+            const response = await fetch('back-dogdreams-mqdn6glod-gael-s-projects-4fcba6e9.vercel.app', {
                 method: 'POST',
+                mode: "no-cors",
                 headers: {
                     'Content-Type': 'application/json'
                 },
@@ -36,7 +37,8 @@ document.getElementById('registerForm').addEventListener('submit', async functio
                 window.location.href = 'pagina_principal.html';
             } else {
                 const errorData = await response.json();
-                alert(`Error: ${errorData.error}`);
+                /*alert(`Error: ${errorData.error}`);*/
+                console.error(errorData)
             }
         } catch (error) {
             console.error('Error al enviar los datos:', error);
@@ -44,7 +46,8 @@ document.getElementById('registerForm').addEventListener('submit', async functio
         }
     };
 
-    if (photoFile) {
+    /*if (photoFile) {
         reader.readAsDataURL(photoFile);
     }
+        */
 });
