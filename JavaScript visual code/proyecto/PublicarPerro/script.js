@@ -1,8 +1,7 @@
-// script.js
-
-// Función que se ejecuta cuando se envía el formulario
 document.getElementById('registerForm').addEventListener('submit', async (event) => {
     event.preventDefault(); // Evita el comportamiento por defecto del formulario
+
+    const token = localStorage.getItem("token");
 
     const formData = new FormData(event.target); // Crea un objeto FormData a partir del formulario
     const dogData = {
@@ -14,14 +13,17 @@ document.getElementById('registerForm').addEventListener('submit', async (event)
         dificultades: formData.get('dificultades'),
     };
 
+    console.log(token);
+
     try {
         const response = await fetch('http://localhost:3000/perros', {
             method: 'POST',
             body: JSON.stringify(dogData),
             headers: {
-                'Content-Type': 'application/json',
-            },
-        });
+                'Authorization': `Bearer ${token}`,
+                'Content-Type': 'application/json'
+            }
+        })
 
         if (response.ok) {
             const result = await response.json();
