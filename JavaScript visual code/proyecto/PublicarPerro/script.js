@@ -11,6 +11,8 @@ document.getElementById('registerForm').addEventListener('submit', async (event)
         nacimiento: formData.get('nacimiento'),
         tamaño: formData.get('tamaño'),
         dificultades: formData.get('dificultades'),
+        descripcion: formData.get("descripcion"),
+        foto: formData.get("photo")  // Asegurarse de que el campo 'photo' esté capturado aquí
     };
 
     console.log(token);
