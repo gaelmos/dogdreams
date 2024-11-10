@@ -1,58 +1,32 @@
-document.addEventListener('DOMContentLoaded', async function () {
-    // Obtener el token de autenticación si es necesario
-    const token = localStorage.getItem("token");
-    
+document.addEventListener('DOMContentLoaded', async () => {
     try {
-        // Hacer la solicitud para obtener los perros desde el servidor
-        const response = await fetch("http://localhost:3000/perros", {
-            method: "GET",
-            headers: {
-                "Authorization": `Bearer ${token}`
-            }
-        });
+        const response = await fetch('http://localhost:3000/traer');  // Endpoint correcto para obtener perros
+        if (!response.ok) throw new Error("No se pudieron cargar los perros");
 
-        if (response.ok) {
-            const perros = await response.json(); // Suponiendo que los perros llegan en formato JSON
-
-            // Llamar a la función para mostrar los perros en la página
-            mostrarPerros(perros);
-        } else {
-            console.error("Error al obtener los perros:", response.statusText);
-            alert("No se pudieron cargar los perros.");
-        }
+        const perros = await response.json();
+        mostrarPerros(perros);  // Función que muestra los perros en el frontend
     } catch (error) {
-        console.error("Error de red:", error);
-        alert("Hubo un problema al conectar con el servidor.");
+        console.error("Error al obtener los perros:", error);
     }
 });
 
-// Función para mostrar los perros en los cuadros
 function mostrarPerros(perros) {
-    // Seleccionar todos los cuadros disponibles
-    const cuadros = document.querySelectorAll('.Rectangulo');
-    
-    // Verifica que hay suficientes cuadros para mostrar los perros
-    perros.forEach((perro, index) => {
-        if (cuadros[index]) {
-            const cuadro = cuadros[index];
+    const pantalla = document.querySelector('.Pantalla');
+    pantalla.innerHTML = '';  // Limpia el contenido antes de agregar nuevos perros
 
-            // Crear un nuevo elemento para la imagen del perro
-            const imagen = document.createElement('img');
-            imagen.src = `data:image/jpeg;base64,${perro.foto}`; // Suponiendo que el foto está en base64
-            imagen.alt = perro.nombre;
-            
-            // Crear un nuevo elemento para el nombre del perro
-            const nombre = document.createElement('p');
-            nombre.textContent = perro.nombre;
+    perros.forEach(perro => {
+        const rectangulo = document.createElement('div');
+        rectangulo.classList.add('Rectangulo');
 
-            // Crear un nuevo elemento para la raza del perro
-            const raza = document.createElement('p');
-            raza.textContent = `Raza: ${perro.raza}`;
+        rectangulo.innerHTML = `
+            <img src="${perro.foto}" alt="Foto de ${perro.nombre}" style="width: 100%; height: auto;">
+            <p><strong>Nombre:</strong> ${perro.nombre}</p>
+            <p><strong>Raza:</strong> ${perro.raza}</p>
+            <p><strong>Color:</strong> ${perro.color}</p>
+            <p><strong>Tamaño:</strong> ${perro.tamaño}</p>
+            <p><strong>Dificultades:</strong> ${perro.dificultades}</p>
+        `;
 
-            // Agregar la imagen y la información al cuadro
-            cuadro.appendChild(imagen);
-            cuadro.appendChild(nombre);
-            cuadro.appendChild(raza);
-        }
+        pantalla.appendChild(rectangulo);
     });
 }
