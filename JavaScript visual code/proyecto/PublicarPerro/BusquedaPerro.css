@@ -68,9 +68,23 @@
     height: 369px;
     border: 1px solid #000;
     box-sizing: border-box;
+    padding: 10px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+    text-align: center;
+    overflow: hidden; /* Asegura que el contenido no se desborde */
 }
 
-.Responsable{
+.Rectangulo img {
+    width: 100%; /* Hace que la imagen ocupe todo el ancho del rectángulo */
+    height: auto; /* Ajusta la altura proporcionalmente */
+    object-fit: cover; /* Recorta la imagen si es necesario para cubrir el área */
+    margin-bottom: 10px;
+}
+
+.Responsable {
     flex-direction: row;
     display: flex;
     align-items: center;
@@ -78,7 +92,6 @@
     margin-top: -110px;
     margin-right: 43px;
     flex-wrap: nowrap; /* Evita que los elementos se envuelvan a la siguiente línea */
-
 }
 
 .Row {
@@ -90,7 +103,7 @@
     margin-top: -24px;
 }
 
-.Row p{
+.Row p {
     margin-top: 100px;
 }
 
@@ -107,7 +120,7 @@
     border-radius: 20px;
 }
 
-#Publicar{
+#Publicar {
     color: #000;
     text-align: center;
     font-family: Archivo;
@@ -126,4 +139,26 @@
     font-family: Kenia;
     font-size: 58px;
     text-align: center;
+}
+
+/* Estilos Responsivos para Pantallas Pequeñas */
+@media (max-width: 768px) {
+    .Pantalla {
+        grid-template-columns: repeat(2, 1fr); /* 2 columnas en pantallas pequeñas */
+        gap: 20px;
+    }
+
+    .Rectangulo {
+        width: 100%;
+        height: auto;
+    }
+
+    .Logo p {
+        font-size: 72px; /* Reducir tamaño del logo en pantallas pequeñas */
+    }
+
+    #Filtrar, #Publicar {
+        width: 100%; /* Asegura que los botones ocupen todo el ancho en pantallas pequeñas */
+        font-size: 40px;
+    }
 }
