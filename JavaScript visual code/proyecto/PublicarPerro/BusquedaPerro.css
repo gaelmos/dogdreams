@@ -1,15 +1,10 @@
-/* Estilos para Pantallas Grandes (Desktop y Laptop) */
 .Pantalla {
     width: 90vw;
-    height: 100vh;
     display: grid;
-    grid-template-columns: repeat(4, 1fr); /* 4 columnas de igual tamaño */
-    grid-template-rows: auto; /* Deja que las filas se ajusten automáticamente */
-    align-items: center; /* Alinea los elementos en el eje Y */
-    justify-content: center; /* Centra los elementos en el eje X */
+    grid-template-columns: repeat(4, 1fr);
+    gap: 50px;
     padding: 0 50px;
-    gap: 50px; /* Espaciado entre las columnas */
-    zoom: 100%;
+    justify-items: center;
 }
 
 .Logo {
@@ -17,11 +12,9 @@
     align-items: center;
     justify-content: center;
     background: #313130;
-    margin-bottom: 20px;
     height: 150px;
-    width: 100%;
-    flex-direction: column;
     margin-bottom: 58px;
+    width: 100%;
 }
 
 .Logo p {
@@ -32,133 +25,70 @@
     text-align: center;
 }
 
-.Columna1, .Columna2, .Columna3, .Columna4 {
-    display: flex;
-    flex-direction: column;
-    background: #FFF;
-    gap: 19px;
-    align-items: center;
-    justify-self: center; /* Asegura que cada columna se centre en su celda de grid */
-}
-
-.Columna1 {
-    grid-column: 1; /* Asigna esta columna a la primera posición */
-}
-
-.Columna2 {
-    grid-column: 2; /* Asigna esta columna a la segunda posición */
-}
-
-.Columna3 {
-    grid-column: 3; /* Asigna esta columna a la tercera posición */
-}
-
-.Columna4 {
-    grid-column: 4; /* Asigna esta columna a la cuarta posición */
-}
-
-.Rectangulos {
-    display: flex;
-    flex-direction: column;
-    gap: 20px;
-}
-
-.Rectangulo {
-    width: 315px;
-    height: 369px;
-    border: 1px solid #000;
-    box-sizing: border-box;
-    padding: 10px;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: space-between;
-    text-align: center;
-    overflow: hidden; /* Asegura que el contenido no se desborde */
-}
-
-.Rectangulo img {
-    width: 100%; /* Hace que la imagen ocupe todo el ancho del rectángulo */
-    height: auto; /* Ajusta la altura proporcionalmente */
-    object-fit: cover; /* Recorta la imagen si es necesario para cubrir el área */
-    margin-bottom: 10px;
-}
-
 .Responsable {
-    flex-direction: row;
     display: flex;
-    align-items: center;
     gap: 70px;
     margin-top: -110px;
     margin-right: 43px;
-    flex-wrap: nowrap; /* Evita que los elementos se envuelvan a la siguiente línea */
 }
 
 .Row {
-    margin-left: 30px;
     display: flex;
-    align-items: center;
     justify-content: center;
-    flex-direction: row;
     margin-top: -24px;
 }
 
-.Row p {
-    margin-top: 100px;
+#Filtrar, #Publicar {
+    color: #000;
+    font-family: Archivo;
+    font-size: 55px;
+    border: none;
+    width: 366px;
+    height: 82px;
+    cursor: pointer;
+    border-radius: 20px;
 }
 
 #Filtrar {
-    color: #000;
-    text-align: center;
-    font-family: Archivo;
-    font-size: 55px;
     background: #F3E353;
-    border: none;
-    width: 366px;
-    height: 82px;
-    cursor: pointer;
-    border-radius: 20px;
 }
 
 #Publicar {
-    color: #000;
-    text-align: center;
-    font-family: Archivo;
-    font-size: 55px;
     background: #F1C144;
-    border: none;
-    width: 366px;
-    height: 82px;
-    cursor: pointer;
-    border-radius: 20px;
-    margin-left: -50px;
 }
 
-.Row p {
-    color: #000;
-    font-family: Kenia;
-    font-size: 58px;
+.Pantalla .Rectangulo {
+    width: 315px;
+    height: 369px;
+    border: 1px solid #000;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    overflow: hidden;
     text-align: center;
+    padding: 10px;
 }
 
-/* Estilos Responsivos para Pantallas Pequeñas */
+.Pantalla .Rectangulo img {
+    width: 100%;
+    height: auto;
+    object-fit: cover;
+    margin-bottom: 10px;
+}
+
+/* Estilos Responsivos */
 @media (max-width: 768px) {
     .Pantalla {
-        grid-template-columns: repeat(2, 1fr); /* 2 columnas en pantallas pequeñas */
+        grid-template-columns: repeat(2, 1fr);
         gap: 20px;
     }
 
-    .Rectangulo {
-        width: 100%;
-        height: auto;
-    }
-
     .Logo p {
-        font-size: 72px; /* Reducir tamaño del logo en pantallas pequeñas */
+        font-size: 72px;
     }
 
     #Filtrar, #Publicar {
-        width: 100%; /* Asegura que los botones ocupen todo el ancho en pantallas pequeñas */
+        width: 100%;
         font-size: 40px;
     }
 }
