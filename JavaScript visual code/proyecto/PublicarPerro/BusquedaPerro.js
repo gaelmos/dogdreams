@@ -13,7 +13,6 @@ document.addEventListener("DOMContentLoaded", async () => {
             const rectangulo = document.createElement("div");
             rectangulo.classList.add("Rectangulo");
 
-        rectangulo.classList.add('Rectangulo');
             const img = document.createElement("img");
             img.src = perro.foto;
             img.alt = perro.nombre;
