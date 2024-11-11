@@ -16,14 +16,13 @@ body {
     align-items: center;
     justify-content: center;
     background-color: #313130;
-    padding: 20px 0;
     margin-bottom: 20px;
 }
 
 .Logo p {
     color: #E7B639;
     font-family: 'Archivo Black', sans-serif;
-    font-size: 100px;
+    font-size: 80px;
     letter-spacing: 30.96px;
 }
 
@@ -45,16 +44,17 @@ body {
     padding: 30px;
     border-radius: 10px;
     box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
-    width: 80%;
-    max-width: 1200px;
+    width: 90%;
+    max-width: 1000px;
+    max-height: 600px;
 }
 
 .Columnas {
     display: flex;
     flex-direction: column;
     justify-content: center;
-    gap: 80px;
-    width: 100%;
+    gap: 50px;
+    width: 50%;
     max-width: 400px;
     align-items: center;
     margin-left: 250px;
@@ -97,7 +97,7 @@ body {
 .Row {
     display: flex;
     flex-direction: row;
-    gap: 100px;
+    gap: 30px;
 }
 
 .Patas {
@@ -115,7 +115,6 @@ body {
     gap: 45px;
     align-items: center;
     justify-content: center;
-    margin-left: 50px;
 }
 
 /* Botones */
@@ -127,7 +126,7 @@ body {
     color: #000;
     cursor: pointer;
     border-radius: 15px;
-    width: 430px;
+    width: 350px;
     height: 100px;
     box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.2);
     transition: all 0.3s ease;
