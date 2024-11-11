@@ -27,7 +27,7 @@
 
 .Responsable {
     display: flex;
-    gap: 70px;
+    gap: 520px;
     margin-top: -110px;
     margin-right: 43px;
 }
@@ -47,6 +47,7 @@
     height: 82px;
     cursor: pointer;
     border-radius: 20px;
+    margin-top: 75px;
 }
 
 #Filtrar {
