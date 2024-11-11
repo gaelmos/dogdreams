@@ -31,7 +31,7 @@ document.addEventListener("DOMContentLoaded", async () => {
         modal.style.display = "none";
     };
 
-    // Mostrar detalles del perro en el modal
+    // Mostrar detalles del perro y el usuario en el modal
     function mostrarDetalle(perro) {
         detallePerro.innerHTML = `
             <h2>${perro.nombre}</h2>
@@ -41,9 +41,15 @@ document.addEventListener("DOMContentLoaded", async () => {
             <p><strong>Tamaño:</strong> ${perro.tamaño}</p>
             <p><strong>Dificultades:</strong> ${perro.dificultades}</p>
             <p><strong>Nacimiento:</strong> ${new Date(perro.nacimiento).toLocaleDateString()}</p>
+            <hr>
+            <h3>Datos del Usuario</h3>
+            <p><strong>Nombre:</strong> ${perro.usuario_nombre}</p>
+            <p><strong>Email:</strong> ${perro.usuario_mail}</p>
+            <p><strong>Teléfono:</strong> ${perro.usuario_numero}</p>
+            <p><strong>Dirección:</strong> ${perro.usuario_direccion}</p>
             <img src="${perro.foto}" alt="${perro.nombre}" style="width: 100%; max-width: 400px;">
         `;
-        modal.style.display = "block";
+        modal.style.display = "block"; // Mostrar el modal
     }
 
     // Cerrar modal al hacer clic fuera del contenido
