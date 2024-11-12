@@ -22,8 +22,8 @@ document.addEventListener("DOMContentLoaded", async () => {
             // Añadir evento al hacer clic en la foto para mostrar datos del perro
             perroDiv.querySelector(".fotoPerro").addEventListener("click", () => mostrarDetallePerro(perro));
             
-            // Añadir evento al botón Adoptar para mostrar datos del usuario
-            perroDiv.querySelector(".btnAdoptar").addEventListener("click", () => mostrarDetalleUsuario(perro));
+            // Añadir evento al botón Adoptar para mostrar la frase de "jeroperuga@gmail.com"
+            perroDiv.querySelector(".btnAdoptar").addEventListener("click", () => mostrarCorreoAdoptar());
             
             pantallaPerros.appendChild(perroDiv);
         });
@@ -51,14 +51,11 @@ document.addEventListener("DOMContentLoaded", async () => {
         modal.style.display = "block";
     }
 
-    // Mostrar detalles del usuario en el modal
-    function mostrarDetalleUsuario(perro) {
+    // Mostrar la frase de "jeroperuga@gmail.com" en el modal al hacer clic en el botón Adoptar
+    function mostrarCorreoAdoptar() {
         detallePerro.innerHTML = `
-            <h3>Datos del Usuario</h3>
-            <p><strong>Nombre:</strong> ${perro.usuario_nombre}</p>
-            <p><strong>Email:</strong> ${perro.usuario_mail}</p>
-            <p><strong>Teléfono:</strong> ${perro.usuario_numero}</p>
-            <p><strong>Dirección:</strong> ${perro.usuario_direccion}</p>
+            <h3>Contacto para adoptar:</h3>
+            <p>Para más información sobre la adopción, contacta a: <strong>jeroperuga@gmail.com</strong></p>
         `;
         modal.style.display = "block";
     }
