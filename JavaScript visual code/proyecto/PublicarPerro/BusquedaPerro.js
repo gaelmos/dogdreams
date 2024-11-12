@@ -16,10 +16,15 @@ document.addEventListener("DOMContentLoaded", async () => {
             perroDiv.innerHTML = `
                 <img src="${perro.foto}" alt="${perro.nombre}" class="fotoPerro" style="cursor: pointer;">
                 <p>${perro.nombre}</p>
+                <button class="btnAdoptar">Adoptar</button>
             `;
 
-            // Añadir evento al hacer clic en la foto
-            perroDiv.querySelector(".fotoPerro").addEventListener("click", () => mostrarDetalle(perro));
+            // Añadir evento al hacer clic en la foto para mostrar datos del perro
+            perroDiv.querySelector(".fotoPerro").addEventListener("click", () => mostrarDetallePerro(perro));
+            
+            // Añadir evento al botón Adoptar para mostrar datos del usuario
+            perroDiv.querySelector(".btnAdoptar").addEventListener("click", () => mostrarDetalleUsuario(perro));
+            
             pantallaPerros.appendChild(perroDiv);
         });
     } catch (error) {
@@ -31,8 +36,8 @@ document.addEventListener("DOMContentLoaded", async () => {
         modal.style.display = "none";
     };
 
-    // Mostrar detalles del perro y el usuario en el modal
-    function mostrarDetalle(perro) {
+    // Mostrar detalles del perro en el modal
+    function mostrarDetallePerro(perro) {
         detallePerro.innerHTML = `
             <h2>${perro.nombre}</h2>
             <p><strong>Raza:</strong> ${perro.raza}</p>
@@ -41,15 +46,21 @@ document.addEventListener("DOMContentLoaded", async () => {
             <p><strong>Tamaño:</strong> ${perro.tamaño}</p>
             <p><strong>Dificultades:</strong> ${perro.dificultades}</p>
             <p><strong>Nacimiento:</strong> ${new Date(perro.nacimiento).toLocaleDateString()}</p>
-            <hr>
+            <img src="${perro.foto}" alt="${perro.nombre}" style="width: 100%; max-width: 400px;">
+        `;
+        modal.style.display = "block";
+    }
+
+    // Mostrar detalles del usuario en el modal
+    function mostrarDetalleUsuario(perro) {
+        detallePerro.innerHTML = `
             <h3>Datos del Usuario</h3>
             <p><strong>Nombre:</strong> ${perro.usuario_nombre}</p>
             <p><strong>Email:</strong> ${perro.usuario_mail}</p>
             <p><strong>Teléfono:</strong> ${perro.usuario_numero}</p>
             <p><strong>Dirección:</strong> ${perro.usuario_direccion}</p>
-            <img src="${perro.foto}" alt="${perro.nombre}" style="width: 100%; max-width: 400px;">
         `;
-        modal.style.display = "block"; // Mostrar el modal
+        modal.style.display = "block";
     }
 
     // Cerrar modal al hacer clic fuera del contenido
