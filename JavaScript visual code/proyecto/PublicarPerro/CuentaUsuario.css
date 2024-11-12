@@ -47,7 +47,7 @@ body {
     width: 80%;
     max-width: 1200px;
     flex-direction: row;
-    max-height: 500px;
+    max-height: 450px;
 }
 
 .Patas {
@@ -99,7 +99,7 @@ body {
     font-family: Archivo, sans-serif;
     cursor: pointer;
     width: 250px;
-    height: 60px;
+    height: 40px;
     color: #fff; /* Texto del botón en blanco */
 }
 
