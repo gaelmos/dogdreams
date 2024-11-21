@@ -1,46 +1,66 @@
-document.getElementById('registerForm').addEventListener('submit', async (event) => {
-    event.preventDefault(); // Evita el comportamiento por defecto del formulario
+document.getElementById('publishForm').addEventListener('submit', async function(event) {
+    event.preventDefault();
 
-    const token = localStorage.getItem("token");
+    // Recoger datos del formulario de publicación
+    const nombrePerro = document.getElementById('nombrePerro').value.trim();
+    const raza = document.getElementById('raza').value.trim();
+    const descripcion = document.getElementById('descripcion').value.trim();
+    const color = document.getElementById('color').value.trim();
+    const tamaño = document.getElementById('tamano').value.trim();
+    const nacimiento = document.getElementById('nacimiento').value.trim();
+    const dificultades = document.getElementById('dificultades').value.trim();
+    const fotoPerro = document.getElementById('fotoPerro').files[0];
 
-    const formData = new FormData(event.target); // Crea un objeto FormData a partir del formulario
-    const dogData = {
-        nombre: formData.get("nombre"),
-        raza: formData.get('raza'),
-        color: formData.get('color'),
-        nacimiento: formData.get('nacimiento'),
-        tamaño: formData.get('tamaño'),
-        dificultades: formData.get('dificultades'),
-        descripcion: formData.get("descripcion"),
-<<<<<<< HEAD
-        foto: formData.get("photo")  // Asegurarse de que el campo 'photo' esté capturado aquí
-=======
-        foto: formData.get("foto")
->>>>>>> 15ea3c41c02778a007c93ea382f61c1533e7e869
+    // Recuperar el token de autenticación del usuario (que se debe haber guardado al hacer login)
+    const token = localStorage.getItem('token');
+    if (!token) {
+        alert('Debes estar logueado para publicar un perro');
+        return;
+    }
+
+    let fotoBase64 = "";
+    if (fotoPerro) {
+        const resizedImageBlob = await resizeImage(fotoPerro, 300); // Tamaño máximo en px
+        fotoBase64 = await new Promise((resolve, reject) => {
+            const reader = new FileReader();
+            reader.onload = () => resolve(reader.result);
+            reader.onerror = reject;
+            reader.readAsDataURL(resizedImageBlob);
+        });
+    }
+
+    // Preparar los datos del perro
+    const perro = {
+        nombre: nombrePerro,
+        raza: raza,
+        descripcion: descripcion,
+        color: color,
+        tamaño: tamaño,
+        nacimiento: nacimiento,
+        dificultades: dificultades,
+        foto: fotoBase64
     };
 
-    console.log(token);
-
+    // Enviar los datos del perro al servidor
     try {
         const response = await fetch('http://localhost:3000/perros', {
             method: 'POST',
-            body: JSON.stringify(dogData),
             headers: {
-                'Authorization': `Bearer ${token}`,
-                'Content-Type': 'application/json'
-            }
-        })
+                'Content-Type': 'application/json',
+                'Authorization': `Bearer ${token}`  // Enviar el token en el header
+            },
+            body: JSON.stringify(perro)
+        });
 
         if (response.ok) {
-            const result = await response.json();
-            console.log('Perro guardado:', result);
-            // Redirigir a otra página donde mostrar los perros
-            window.location.href = 'BusquedaPerro.html';
+            alert('Perro publicado con éxito');
+            window.location.href = 'BusquedaPerro.html';  // Redirigir a la página de búsqueda de perros
         } else {
-            const error = await response.json();
-            console.error('Error al guardar los datos del perro:', error);
+            const errorData = await response.json();
+            alert(`Error: ${errorData.error}`);
         }
     } catch (error) {
-        console.error('Error de red:', error);
+        console.error('Error al publicar el perro:', error.message);
+        alert('Error al publicar el perro. Inténtelo de nuevo más tarde.');
     }
 });

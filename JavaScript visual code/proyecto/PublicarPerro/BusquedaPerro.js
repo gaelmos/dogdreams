@@ -1,5 +1,5 @@
 document.addEventListener("DOMContentLoaded", async () => {
-    const pantallaPerros = document.getElementById("pantallaPerros");
+    const pantallaPerros = document.getElementById("contenedorPerros");
     const modal = document.getElementById("modal");
     const closeModal = document.getElementById("closeModal");
     const detallePerro = document.getElementById("detallePerro");
@@ -21,10 +21,10 @@ document.addEventListener("DOMContentLoaded", async () => {
 
             // Añadir evento al hacer clic en la foto para mostrar datos del perro
             perroDiv.querySelector(".fotoPerro").addEventListener("click", () => mostrarDetallePerro(perro));
-            
-            // Añadir evento al botón Adoptar para mostrar datos del usuario
-            perroDiv.querySelector(".btnAdoptar").addEventListener("click", () => mostrarDetalleUsuario(perro));
-            
+
+            // Añadir evento al botón Adoptar para mostrar el mensaje de adopción
+            perroDiv.querySelector(".btnAdoptar").addEventListener("click", mostrarMensajeAdopcion);
+
             pantallaPerros.appendChild(perroDiv);
         });
     } catch (error) {
@@ -51,29 +51,13 @@ document.addEventListener("DOMContentLoaded", async () => {
         modal.style.display = "block";
     }
 
-    // Mostrar detalles del usuario en el modal
-    async function mostrarDetalleUsuario(perro) {
-        if (!perro.dni_dueño) {
-            console.error("No se encontró el DNI del dueño para este perro.");
-            return;
-        }
-
-        try {
-            const response = await fetch(`http://localhost:3000/traerusu/${perro.dni_dueño}`);
-            if (!response.ok) throw new Error('No se pudo obtener los datos del usuario');
-            const usuario = await response.json();
-
-            detallePerro.innerHTML = `
-                <h3>Datos del Usuario</h3>
-                <p><strong>Nombre:</strong> ${usuario.nombre}</p>
-                <p><strong>Email:</strong> ${usuario.mail}</p>
-                <p><strong>Teléfono:</strong> ${usuario.numero}</p>
-                <p><strong>Dirección:</strong> ${usuario.direccion}</p>
-            `;
-            modal.style.display = "block";
-        } catch (error) {
-            console.error("Error al obtener los datos del usuario:", error);
-        }
+    // Mostrar mensaje de adopción en el modal
+    function mostrarMensajeAdopcion() {
+        detallePerro.innerHTML = `
+            <h3>¡Gracias por tu interés en adoptar!</h3>
+            <p>Para más información sobre la adopción, contacta a: <strong>jeroperuga@gmail.com</strong></p>
+        `;
+        modal.style.display = "block";
     }
 
     // Cerrar modal al hacer clic fuera del contenido

@@ -1,17 +1,12 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
 <head>
-    <!--Importar tipografía-->
-    <link href="https://fonts.googleapis.com/css2?family=Kenia&display=swap" rel="stylesheet">
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Busqueda de perro</title>
+    <link href="https://fonts.googleapis.com/css2?family=Kenia&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Archivo+Black&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="BusquedaPerro.css">
-<<<<<<< HEAD
-=======
-   
->>>>>>> 15ea3c41c02778a007c93ea382f61c1533e7e869
-    <title>Busqueda de perro</title>
 </head>
 <body>
     <div class="Logo">
@@ -22,43 +17,26 @@
         <div class="Responsable">
             <button id="Filtrar">Filtrar</button>
             <p>Recuerde ser responsable !!</p>
-            <button id="Publicar" onclick="Publicar()">Publicar</button> <!-- Se añade el evento onclick -->
+            <button id="Publicar" onclick="Publicar()">Publicar</button>
         </div>
     </div>
 
-    <div class="Pantalla">
-        <div class="Columna1">
-            <div class="Rectangulos">
-                <div class="Rectangulo"></div>
-                <div class="Rectangulo"></div>
-            </div>
-        </div>
+    <div class="Pantalla" id="contenedorPerros">
+        <!-- Aquí se mostrarán los perros cargados dinámicamente -->
+    </div>
 
-        <div class="Columna2">
-            <div class="Rectangulos">
-                <div class="Rectangulo"></div>
-                <div class="Rectangulo"></div>
-            </div>
-        </div>
-
-        <div class="Columna3">
-            <div class="Rectangulos">
-                <div class="Rectangulo"></div>
-                <div class="Rectangulo"></div>
-            </div>
-        </div>
-
-        <div class="Columna4">
-            <div class="Rectangulos">
-                <div class="Rectangulo"></div>
-                <div class="Rectangulo"></div>
-            </div>
+    <!-- Modal -->
+    <div id="modal" class="modal" style="display: none;">
+        <div class="modal-content">
+            <span id="closeModal" class="close" style="cursor: pointer;">&times;</span>
+            <div id="detallePerro"></div>
         </div>
     </div>
 
+    <script src="BusquedaPerro.js"></script>
     <script>
-        function Publicar(){
-            window.location.href = "Caracteristicas2.html"; // Redirige a la página PublicarPerro.html
+        function Publicar() {
+            window.location.href = "Caracteristicas2.html";
         }
     </script>
 </body>

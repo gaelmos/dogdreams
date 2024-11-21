@@ -1,3 +1,4 @@
+
 * {
     margin: 0;
     padding: 0;
@@ -18,13 +19,12 @@ body {
     background-color: #313130;
     padding: 20px 0;
     margin-bottom: 20px;
-    max-height: 100px;
 }
 
 .Logo p {
     color: #E7B639;
     font-family: 'Archivo Black', sans-serif;
-    font-size: 60px;
+    font-size: 80px;
     letter-spacing: 10px;
     text-transform: uppercase;
 }
@@ -52,7 +52,6 @@ body {
     width: 90%;
     max-width: 1200px;
     transition: box-shadow 0.3s ease;
-    max-height: 510px;
 }
 
 .Formulario:hover {
@@ -74,7 +73,7 @@ body {
     display: flex;
     flex-direction: column;
     justify-content: center;
-    gap: 5px;
+    gap: 20px;
     width: 100%;
     max-width: 400px;
 }
