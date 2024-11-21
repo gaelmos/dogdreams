@@ -1,16 +1,10 @@
 document.addEventListener("DOMContentLoaded", async () => {
-    const pantallaPerros = document.getElementById("pantallaPerros"); // Asegúrate de que este elemento exista
+    const pantallaPerros = document.getElementById("pantallaPerros");
     const modal = document.getElementById("modal");
     const closeModal = document.getElementById("closeModal");
     const detallePerro = document.getElementById("detallePerro");
 
-    if (!pantallaPerros) {
-        console.error("El contenedor de perros no se encontró.");
-        return; // Si no existe, detenemos la ejecución
-    }
-
     try {
-        // Llamada al backend para obtener la lista de perros
         const response = await fetch('http://localhost:3000/traer');
         if (!response.ok) throw new Error('No se pudieron cargar los perros');
         const perros = await response.json();
@@ -22,19 +16,15 @@ document.addEventListener("DOMContentLoaded", async () => {
             perroDiv.innerHTML = `
                 <img src="${perro.foto}" alt="${perro.nombre}" class="fotoPerro" style="cursor: pointer;">
                 <p>${perro.nombre}</p>
+                <button class="btnAdoptar">Adoptar</button>
             `;
 
-            // Añadir evento al hacer clic en la foto para mostrar los datos del perro
+            // Añadir evento al hacer clic en la foto para mostrar datos del perro
             perroDiv.querySelector(".fotoPerro").addEventListener("click", () => mostrarDetallePerro(perro));
-<<<<<<< Updated upstream
             
-            // Añadir evento al botón Adoptar para mostrar la frase de "jeroperuga@gmail.com"
-            perroDiv.querySelector(".btnAdoptar").addEventListener("click", () => mostrarCorreoAdoptar());
+            // Añadir evento al botón Adoptar para mostrar datos del usuario
+            perroDiv.querySelector(".btnAdoptar").addEventListener("click", () => mostrarDetalleUsuario(perro));
             
-=======
-
-            // Agregar el div con la foto y el nombre del perro al contenedor
->>>>>>> Stashed changes
             pantallaPerros.appendChild(perroDiv);
         });
     } catch (error) {
@@ -58,20 +48,32 @@ document.addEventListener("DOMContentLoaded", async () => {
             <p><strong>Nacimiento:</strong> ${new Date(perro.nacimiento).toLocaleDateString()}</p>
             <img src="${perro.foto}" alt="${perro.nombre}" style="width: 100%; max-width: 400px;">
         `;
-<<<<<<< Updated upstream
         modal.style.display = "block";
     }
 
-    // Mostrar la frase de "jeroperuga@gmail.com" en el modal al hacer clic en el botón Adoptar
-    function mostrarCorreoAdoptar() {
-        detallePerro.innerHTML = `
-            <h3>Contacto para adoptar:</h3>
-            <p>Para más información sobre la adopción, contacta a: <strong>jeroperuga@gmail.com</strong></p>
-        `;
-        modal.style.display = "block";
-=======
-        modal.style.display = "flex"; // Muestra el modal
->>>>>>> Stashed changes
+    // Mostrar detalles del usuario en el modal
+    async function mostrarDetalleUsuario(perro) {
+        if (!perro.dni_dueño) {
+            console.error("No se encontró el DNI del dueño para este perro.");
+            return;
+        }
+
+        try {
+            const response = await fetch(`http://localhost:3000/traerusu/${perro.dni_dueño}`);
+            if (!response.ok) throw new Error('No se pudo obtener los datos del usuario');
+            const usuario = await response.json();
+
+            detallePerro.innerHTML = `
+                <h3>Datos del Usuario</h3>
+                <p><strong>Nombre:</strong> ${usuario.nombre}</p>
+                <p><strong>Email:</strong> ${usuario.mail}</p>
+                <p><strong>Teléfono:</strong> ${usuario.numero}</p>
+                <p><strong>Dirección:</strong> ${usuario.direccion}</p>
+            `;
+            modal.style.display = "block";
+        } catch (error) {
+            console.error("Error al obtener los datos del usuario:", error);
+        }
     }
 
     // Cerrar modal al hacer clic fuera del contenido
