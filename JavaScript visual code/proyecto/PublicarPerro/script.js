@@ -1,15 +1,51 @@
-document.getElementById('publishForm').addEventListener('submit', async function(event) {
+// Función para redimensionar la imagen
+function resizeImage(file, maxWidth) {
+    return new Promise((resolve, reject) => {
+        const img = new Image();
+        const reader = new FileReader();
+
+        reader.onload = function(e) {
+            img.onload = function() {
+                // Crear un canvas para redimensionar la imagen
+                const canvas = document.createElement('canvas');
+                const ctx = canvas.getContext('2d');
+
+                const ratio = img.height / img.width;
+                canvas.width = maxWidth;  // Establecer el ancho máximo
+                canvas.height = maxWidth * ratio;  // Calcular la altura manteniendo la proporción
+
+                // Dibujar la imagen en el canvas
+                ctx.drawImage(img, 0, 0, canvas.width, canvas.height);
+
+                // Convertir la imagen redimensionada a blob
+                canvas.toBlob(function(blob) {
+                    resolve(blob);
+                }, 'image/jpeg');
+            };
+            img.src = e.target.result;
+        };
+
+        reader.onerror = function(error) {
+            reject(error);
+        };
+
+        reader.readAsDataURL(file);
+    });
+}
+
+// Evento para manejar el formulario de publicación
+document.getElementById('registerForm').addEventListener('submit', async function(event) {
     event.preventDefault();
 
     // Recoger datos del formulario de publicación
-    const nombrePerro = document.getElementById('nombrePerro').value.trim();
-    const raza = document.getElementById('raza').value.trim();
-    const descripcion = document.getElementById('descripcion').value.trim();
-    const color = document.getElementById('color').value.trim();
-    const tamaño = document.getElementById('tamano').value.trim();
-    const nacimiento = document.getElementById('nacimiento').value.trim();
-    const dificultades = document.getElementById('dificultades').value.trim();
-    const fotoPerro = document.getElementById('fotoPerro').files[0];
+    const nombrePerro = document.querySelector('input[name="nombre"]').value.trim();
+    const raza = document.querySelector('input[name="raza"]').value.trim();
+    const descripcion = document.querySelector('input[name="descripcion"]').value.trim();
+    const color = document.querySelector('input[name="color"]').value.trim();
+    const tamaño = document.querySelector('input[name="tamaño"]').value.trim();
+    const nacimiento = document.querySelector('input[name="nacimiento"]').value.trim();
+    const dificultades = document.querySelector('input[name="dificultades"]').value.trim();
+    const fotoPerro = document.querySelector('input[name="photo"]').files[0];
 
     // Recuperar el token de autenticación del usuario (que se debe haber guardado al hacer login)
     const token = localStorage.getItem('token');
