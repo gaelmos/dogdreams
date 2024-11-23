@@ -1,11 +1,11 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link href="https://fonts.googleapis.com/css2?family=Kenia&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="CaracteristicasUsuario.css">
-    <title>Caracteristicas Perro</title>
+    <title>Características del Perro</title>
 </head>
 <body>
 
@@ -20,12 +20,15 @@
             </div>
 
             <div class="FotoPerfil">
-                <h3>Nombre:</h3>
-                <h4>Descrpición:</h4>
-                <h5>Dificultad:</h5>
+                <h1>Nombre:</h1>
+                <h2>Dificultad:</h2>
                 <div class="CuadroBlanco"></div> <!-- Imagen del perro como fondo -->
+                <div class="Descripcion">
+                    <p><strong>Descripción:</strong></p>
+                    <p id="descripcion"></p>
+                </div>
                 <div class="Crear">
-                    <button type="submit"><p>Adoptar</p></button>
+                    <button type="button" id="adoptarButton"><p>Adoptar</p></button>
                 </div>
             </div>
         </form>
@@ -55,6 +58,13 @@
                         <p><strong>Tamaño:</strong> ${perroSeleccionado.tamaño}</p>
                     </div>
                 `;
+                // Mostrar la descripción del perro
+                document.getElementById("descripcion").innerText = perroSeleccionado.descripcion;
+                
+                // Agregar el evento para el botón "Adoptar"
+                document.getElementById("adoptarButton").addEventListener("click", () => {
+                    alert("Para adoptar a este perro, contacta a jeroperuga@gmail.com");
+                });
             } else {
                 // Si no hay datos, redirigir de nuevo a la página de búsqueda
                 alert("No se encontró información del perro seleccionado.");
