@@ -3,28 +3,59 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link href="https://fonts.googleapis.com/css2?family=Archivo+Black&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Kenia&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="Caracteristicas2.css">
+    <link href="https://fonts.googleapis.com/css2?family=Archivo+Black&display=swap" rel="stylesheet">
     <title>Características</title>
 </head>
 <body>
+
     <div class="Logo">
         <p>Características</p>
     </div>
 
     <div class="Pantalla">
-        <form id="registerForm" class="Formulario" enctype="multipart/form-data">
+        <form id="registerForm" class="Formulario">
+            <div class="Patas">
+                <img src="../Assets/Captura de pantalla 2024-09-24 134343.png" alt="patas.png">
+            </div>
+
             <div class="Columnas">
-                <input id="nombre" name="nombre" type="text" placeholder="Nombre" required>
-                <input id="raza" name="raza" type="text" placeholder="Raza" required>
-                <input id="nacimiento" name="nacimiento" type="date" placeholder="Nacimiento" required>
-                <input id="color" name="color" type="text" placeholder="Color" required>
-                <input id="tamaño" name="tamaño" type="text" placeholder="Tamaño" required>
-                <input id="dificultades" name="dificultades" type="text" placeholder="Dificultades" required>
-                <input id="descripcion" name="descripcion" type="text" placeholder="Descripción" required>
-                <input id="photo" name="photo" type="file" accept="image/*" required>
+                <div class="columnaMail">
+                    <input name="nombre" type="text" placeholder="Nombre" required>
+                </div>
+                <div class="Contraseña">
+                    <input name="raza" type="text" placeholder="Raza" required>
+                </div>
+                <div class="DNI">
+                    <input name="nacimiento" type="date" placeholder="Nacimiento" required>
+                </div>
+                <div class="Telefono">
+                    <input name="color" type="text" placeholder="Color" required>
+                </div>
+                <div class="NombreApellido">
+                    <input name="tamaño" type="text" placeholder="Tamaño" required>
+                </div>
+                <div class="Dificultades">
+                    <input name="dificultades" type="text" placeholder="Dificultades (si/no)" required>
+                </div>
+                <div class="Dificultades">
+                    <input name="enfermedad" type="text" placeholder="Dificultad/enfermedad que tiene" required>
+                </div>
+
                 <div class="Crear">
                     <button type="submit"><p>Publicar</p></button>
+                </div>
+            </div>
+
+            <div class="FotoPerfil">
+                <div class="Descripcion">
+                    <input name="descripcion" type="text" placeholder="Breve descripción del perro" required>
+                </div>
+                <div class="CuadroBlanco"></div>
+                <div class="ImagenTextoArchivo">
+                    <p>Insertar foto de perfil</p>
+                    <input name="photo" type="file" accept="image/*" required>
                 </div>
             </div>
         </form>

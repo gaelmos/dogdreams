@@ -1,34 +1,27 @@
 <!DOCTYPE html>
-<html lang="es">
+<html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Busqueda de perro</title>
-    <link href="https://fonts.googleapis.com/css2?family=Kenia&display=swap" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css2?family=Archivo+Black&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="BusquedaPerro.css">
+    <title>Busqueda de Perro</title>
 </head>
 <body>
     <div class="Logo">
         <p>DogDreams</p>
     </div>
-
     <div class="Row">
         <div class="Responsable">
             <button id="Filtrar">Filtrar</button>
-            <p>Recuerde ser responsable !!</p>
             <button id="Publicar" onclick="Publicar()">Publicar</button>
         </div>
     </div>
+    <div class="Pantalla" id="pantallaPerros"></div>
 
-    <div class="Pantalla" id="contenedorPerros">
-        <!-- Los perros se mostrarán aquí -->
-    </div>
-
-    <!-- Modal -->
-    <div id="modal" class="modal" style="display: none;">
-        <div class="modal-content">
-            <span id="closeModal" class="close" style="cursor: pointer;">&times;</span>
+    <!-- Modal para mostrar detalles del perro -->
+    <div id="modal" class="modal">
+        <div class="modal-content" id="modalContent">
+            <span class="close" id="closeModal">&times;</span>
             <div id="detallePerro"></div>
         </div>
     </div>

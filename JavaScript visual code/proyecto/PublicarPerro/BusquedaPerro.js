@@ -1,11 +1,10 @@
 document.addEventListener("DOMContentLoaded", async () => {
-    const pantallaPerros = document.getElementById("contenedorPerros");
+    const pantallaPerros = document.getElementById("pantallaPerros");
     const modal = document.getElementById("modal");
     const closeModal = document.getElementById("closeModal");
     const detallePerro = document.getElementById("detallePerro");
 
     try {
-        // Obtener los perros desde el backend
         const response = await fetch('http://localhost:3000/traer');
         if (!response.ok) throw new Error('No se pudieron cargar los perros');
         const perros = await response.json();
@@ -15,17 +14,17 @@ document.addEventListener("DOMContentLoaded", async () => {
             const perroDiv = document.createElement("div");
             perroDiv.classList.add("Rectangulo");
             perroDiv.innerHTML = `
-                <img src="data:image/jpeg;base64,${perro.foto}" alt="${perro.nombre}" class="fotoPerro" style="cursor: pointer;">
+                <img src="${perro.foto}" alt="${perro.nombre}" class="fotoPerro" style="cursor: pointer;">
                 <p>${perro.nombre}</p>
                 <button class="btnAdoptar">Adoptar</button>
             `;
 
-            // Añadir evento al hacer clic en la foto para mostrar detalles del perro
+            // Añadir evento al hacer clic en la foto para mostrar datos del perro
             perroDiv.querySelector(".fotoPerro").addEventListener("click", () => mostrarDetallePerro(perro));
-
-            // Añadir evento al botón Adoptar para mostrar el mensaje de adopción
-            perroDiv.querySelector(".btnAdoptar").addEventListener("click", () => mostrarMensajeAdopcion(perro));
-
+            
+            // Añadir evento al botón Adoptar para mostrar la frase de "jeroperuga@gmail.com"
+            perroDiv.querySelector(".btnAdoptar").addEventListener("click", () => mostrarCorreoAdoptar());
+            
             pantallaPerros.appendChild(perroDiv);
         });
     } catch (error) {
@@ -47,15 +46,15 @@ document.addEventListener("DOMContentLoaded", async () => {
             <p><strong>Tamaño:</strong> ${perro.tamaño}</p>
             <p><strong>Dificultades:</strong> ${perro.dificultades}</p>
             <p><strong>Nacimiento:</strong> ${new Date(perro.nacimiento).toLocaleDateString()}</p>
-            <img src="data:image/jpeg;base64,${perro.foto}" alt="${perro.nombre}" style="width: 100%; max-width: 400px;">
+            <img src="${perro.foto}" alt="${perro.nombre}" style="width: 100%; max-width: 400px;">
         `;
         modal.style.display = "block";
     }
 
-    // Mostrar mensaje de adopción en el modal
-    function mostrarMensajeAdopcion(perro) {
+    // Mostrar la frase de "jeroperuga@gmail.com" en el modal al hacer clic en el botón Adoptar
+    function mostrarCorreoAdoptar() {
         detallePerro.innerHTML = `
-            <h3>¡Gracias por tu interés en adoptar a ${perro.nombre}!</h3>
+            <h3>Contacto para adoptar:</h3>
             <p>Para más información sobre la adopción, contacta a: <strong>jeroperuga@gmail.com</strong></p>
         `;
         modal.style.display = "block";
