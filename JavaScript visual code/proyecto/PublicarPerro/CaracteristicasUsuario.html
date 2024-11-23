@@ -5,7 +5,6 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link href="https://fonts.googleapis.com/css2?family=Kenia&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="CaracteristicasUsuario.css">
- 
     <title>Caracteristicas Perro</title>
 </head>
 <body>
@@ -15,40 +14,15 @@
     </div>
 
     <div class="Pantalla">
-
         <form id="registerForm" class="Formulario">
             <div class="Columnas">
-             <div class="Salir">
-                <div class="Contraseña">
-                    <p>Raza:</p>
-                </div>
-            </div>
-                <div class="DNI">
-                    <p>Nacimiento:</p>
-                </div>
-                <div class="Telefono">
-                    <p>Color:</p>
-                </div>
-                <div class="NombreApellido">
-                    <p>Tamaño:</p>
-                </div>
-                <div class="Dificultades">
-                    <h2>Posee alguna dificultad</h2>
-                    <div class="Circulos">
-                        <div class="Circulo1">
-                            <p>Si</p>
-                        </div>
-                        <div class="Circulo2">
-                            <p>No</p>
-                        </div>
-                    </div>
-                </div>
+                <!-- Aquí se cargarán los datos del perro dinámicamente -->
             </div>
 
             <div class="FotoPerfil">
-                <h1>Nombre: </h1>
-                <h2>dificultad:</h2>
-                <div class="CuadroBlanco"></div> <!-- Cuadro blanco para la foto -->
+                <h1>Nombre:</h1>
+                <h2>Dificultad:</h2>
+                <div class="CuadroBlanco"></div> <!-- Imagen del perro como fondo -->
                 <div class="Crear">
                     <button type="submit"><p>Adoptar</p></button>
                 </div>
@@ -56,6 +30,36 @@
         </form>
     </div>
 
-    <script src="crearCuenta.js"></script>
+    <script>
+        document.addEventListener("DOMContentLoaded", () => {
+            // Obtener datos del perro seleccionado del localStorage
+            const perroSeleccionado = JSON.parse(localStorage.getItem("perroSeleccionado"));
+
+            if (perroSeleccionado) {
+                // Insertar datos del perro en los elementos correspondientes
+                document.querySelector(".FotoPerfil h1").innerText = `Nombre: ${perroSeleccionado.nombre}`;
+                document.querySelector(".FotoPerfil h2").innerText = `Dificultad: ${perroSeleccionado.dificultades}`;
+                document.querySelector(".CuadroBlanco").style.backgroundImage = `url(${perroSeleccionado.foto})`;
+                document.querySelector(".Columnas").innerHTML = `
+                    <div class="Salir">
+                        <p><strong>Raza:</strong> ${perroSeleccionado.raza}</p>
+                    </div>
+                    <div class="DNI">
+                        <p><strong>Nacimiento:</strong> ${new Date(perroSeleccionado.nacimiento).toLocaleDateString()}</p>
+                    </div>
+                    <div class="Telefono">
+                        <p><strong>Color:</strong> ${perroSeleccionado.color}</p>
+                    </div>
+                    <div class="NombreApellido">
+                        <p><strong>Tamaño:</strong> ${perroSeleccionado.tamaño}</p>
+                    </div>
+                `;
+            } else {
+                // Si no hay datos, redirigir de nuevo a la página de búsqueda
+                alert("No se encontró información del perro seleccionado.");
+                window.location.href = "busquedaperro.html";
+            }
+        });
+    </script>
 </body>
 </html>
